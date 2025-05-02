@@ -3,7 +3,7 @@ import './LoginPageStyle.css';
 import Header from '../components/Header';
 import LoginForm from '../components/LoginForm';
 
-const Login: React.FC = () => {
+const LandingPage: React.FC = () => {
   return (
     <div className="login-container">
       <Header />
@@ -18,4 +18,4 @@ const Login: React.FC = () => {
   );
 };
 
-export default Login;
+export default LandingPage;
