@@ -12,7 +12,6 @@ const Header: React.FC = () => {
         <a href="#">Serviços</a>
         <a href="#">Contato</a>
         <a href="#" className="active">Login</a>
-        <div className="espaco-vazio"></div>
       </nav>
     </header>
   );
