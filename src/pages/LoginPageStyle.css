@@ -3,13 +3,12 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 100vh;
-    background-color: white;
+    height: auto;
   }
   
   .login-main {
     text-align: center;
-    margin-top: 100px;
+    margin-top: 1px;
   }
   
   .login-main h1 {
@@ -37,8 +36,4 @@
   
   button:hover {
     opacity: 0.9;
-  }
-  
-  p.subtext {
-    size: 5rem;
   }
