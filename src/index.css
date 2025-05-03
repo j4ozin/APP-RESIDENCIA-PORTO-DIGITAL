@@ -4,8 +4,12 @@
   box-sizing: border-box;
 }
 
+main {
+  padding-top: 50px;
+}
+
 body {
-  
+  font-family: 'Poppins', sans-serif;
   color: #111827;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   min-height: 100vh;
