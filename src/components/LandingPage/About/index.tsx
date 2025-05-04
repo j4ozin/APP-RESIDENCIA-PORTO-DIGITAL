@@ -3,19 +3,16 @@ import './styles.css';
 
 const About: React.FC = () => {
   return (
-    <section id="about" className="section about">
-        <div className="container flex">
+    <section id="about">
           <div className="text">
-            <h2>Sobre nóooooooooos</h2>
+            <h2>Sobre nós</h2>
             <p>
-              Somos um estúdio de arquitetura focado em design contemporâneo, funcionalidade e sustentabilidade.
-              Com anos de experiência, atuamos em projetos residenciais, comerciais e corporativos.
+            Conectamos clientes e arquitetos de forma simples e inteligente, facilitando a criação de briefings claros e objetivos para projetos mais alinhados e eficientes.
             </p>
           </div>
           <div className="image">
-            <img src="/img/planta-tecnica.jpg" alt="Planta técnica" />
+            <img src="src\components\LandingPage\About\assets\about.png" alt="Planta técnica" />
           </div>
-        </div>
       </section>
   );
 };

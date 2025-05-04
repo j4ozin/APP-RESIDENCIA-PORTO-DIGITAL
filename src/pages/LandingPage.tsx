@@ -7,7 +7,7 @@ import Services from "../components/LandingPage/Services";
 import Contact from "../components/LandingPage/Contact";
 import { useState, useEffect } from "react";
 
-function App() {
+function LandingPage() {
 
   const [activeSection, setActiveSection] = useState("home");
 
@@ -47,4 +47,4 @@ function App() {
   );
 }
 
-export default App;
+export default LandingPage;
