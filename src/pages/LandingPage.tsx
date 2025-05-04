@@ -36,7 +36,7 @@ function App() {
       </header>
       <main>
       <Hero />
-      <About />      
+      <About />
       <Projects />
       <Services />
       <Contact />
