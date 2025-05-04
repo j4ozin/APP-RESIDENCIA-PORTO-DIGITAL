@@ -1,16 +1,15 @@
 import React from 'react';
 import './styles.css';
-import Header from '../components/Header';
 import LoginForm from '../components/LoginForm';
+import { Link } from 'react-router-dom';
 
 const Login: React.FC = () => {
   return (
     <div className="login-container">
-      <Header />
       <main className="login-main">
-        <h1>Briffa</h1>
+      <Link to="/"><h1>Briffa</h1></Link>
         <p className='subtext'>
-          Não tem uma conta? <a href="#">Crie uma conta.</a>
+          Não tem uma conta? <Link to="/cadastro">Crie uma.</Link>
         </p>
         <LoginForm />
       </main>
