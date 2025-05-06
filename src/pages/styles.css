@@ -5,13 +5,15 @@
     align-items: center;
     height: 100vh;
     background-color: white;
+    margin: 0 auto;
+    padding: 40px 20px;
   }
   
   .login-main {
     text-align: center;
   }
   
-  .login-main h1 {
+  .login-main h2 {
     font-weight: 400;
     margin-bottom: 10px;
   }
