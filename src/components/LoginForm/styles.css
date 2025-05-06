@@ -17,6 +17,12 @@
   justify-content: left;
 }
 
+.title h3 {
+  text-align: center;
+  font-weight: 400;
+  margin: 40px 0 30px;
+}
+
 .input-wrapper {
   margin-bottom: 0.5rem;
   display: flex;
