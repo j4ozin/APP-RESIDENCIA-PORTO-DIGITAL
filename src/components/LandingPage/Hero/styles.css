@@ -66,6 +66,7 @@
 
 .hero-card p {
     padding-top: 0.5rem;
+    font-size: 0.9rem;
 }
 
 .hero-card .content {
@@ -77,3 +78,11 @@
 .hero-card:hover {
     transform: translateY(-5px);
 }
+
+.slick-slide img {
+    width: 100%;
+  }
+  
+  .slick-dots li button:before {
+    color: #555;
+  }

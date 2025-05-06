@@ -1,0 +1,114 @@
+section#contact {
+    display: flex;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-bottom: 15%;
+}
+
+.container {
+    flex: 1;
+    padding-right: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.socials {
+    padding-top: 3rem;
+}
+
+.socials .icons {
+    font-size: 30px;
+    display: flex;
+    justify-content: left;
+    gap: 0.5rem;
+}
+
+.socials p {
+    padding-bottom: 1rem;
+}
+
+.address {
+
+    font-weight: lighter;
+    font-style: normal;
+}
+
+.address .icon {
+    font-size: 40px;
+}
+
+.politics p {
+    font-size: 0.7rem;
+    font-weight: lighter;
+}
+
+p {
+    padding-top: 1rem;
+}
+
+.form-area {
+    flex: 1;
+    min-width: 50%;
+    height: 100%;
+}
+
+.form-group {
+    position: relative;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 1.2rem 0.5rem 0.5rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+  }
+
+  .form-group label {
+    position: absolute;
+    top: 1.2rem;
+    left: 0.5rem;
+    color: #888;
+    font-size: 1rem;
+    pointer-events: none;
+    transition: 0.2s ease all;
+  }
+  
+  .form-group input:focus + label,
+  .form-group input:not(:placeholder-shown) + label {
+    top: 0.3rem;
+    left: 0.5rem;
+    font-size: 0.75rem;
+    color: #333;
+  }
+
+.form-group textarea {
+    width: 100%;
+    padding: 1.2rem 0.5rem 0.5rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+    min-height: 100px;
+    outline: none;
+}
+
+.form-group label {
+    position: absolute;
+    top: 1.2rem;
+    left: 0.5rem;
+    color: #888;
+    font-size: 1rem;
+    pointer-events: none;
+    transition: 0.2s ease all;
+}
+
+.form-group textarea:focus+label,
+.form-group textarea:not(:placeholder-shown)+label {
+    top: 0.3rem;
+    left: 0.5rem;
+    font-size: 0.75rem;
+    color: #333;
+}

@@ -1,0 +1,45 @@
+.custom-dots-wrapper {
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    gap: 0;
+    list-style: none;
+  }
+  
+  .custom-dots-wrapper li {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .custom-dot {
+    font-size: 18px;
+    color: #999;
+    transition: color 0.2s ease;
+    cursor: pointer;
+    padding: 0 1px;
+    line-height: 1;
+  }
+  
+  .custom-dot:hover {
+    color: #555;
+  }
+  
+  .slick-dots li.slick-active .custom-dot {
+    color: #000;
+  }
+
+  .carousel-slide {
+    width: 300%;
+    height: 400px; /* Altura fixa do carrossel */
+    overflow: hidden; /* Esconde partes fora da área */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
