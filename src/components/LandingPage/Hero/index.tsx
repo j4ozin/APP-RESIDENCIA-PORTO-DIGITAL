@@ -1,7 +1,7 @@
 import React from 'react';
 import './styles.css';
 
-import SimpleCarousel from './Carousel';
+import SimpleCarousel from '../Projects/carousels/Carousel';
 
 const Hero: React.FC = () => {
   return (
@@ -34,14 +34,7 @@ const Hero: React.FC = () => {
           <p>Para reformas pontuais ou ambientes únicos, o Briffa ajuda a detalhar cada necessidade com precisão.</p>
         </div></div>
       </div>
-
-{ /* carousel */ }
-
-<div style={{ maxWidth: '300px', margin: '0 auto' }}>
-  <SimpleCarousel />
-</div>
-
-    </section>
+      </section>
 
   );
 };
