@@ -18,10 +18,10 @@ const Contact: React.FC = () => {
         <div className="socials">
           <p>Siga-nos nas redes sociais</p>
           <div className="icons">
-            <AiFillInstagram />
-            <PiXLogoFill />
-            <FaSquareFacebook />
-            <AiFillTikTok />
+            <a href="http://instagram.com/placeholder" target="blank"><AiFillInstagram /></a>
+            <a href="http://x.com/placeholder" target="blank"><PiXLogoFill /></a>
+            <a href="http://facebook.com/placeholder" target="blank"><FaSquareFacebook /></a>
+            <a href="http://tiktok.com/placeholder" target="blank"><AiFillTikTok /></a>
           </div>
         </div>
         <div className='politics'>
