@@ -1,5 +1,5 @@
 .hero-container {
-    position:relative;
+    position: relative;
 }
 
 .hero-background {
@@ -70,9 +70,12 @@
 }
 
 .hero-card .content {
-    position: relative; /* Garante que o conteúdo do card não sobreponha a imagem */
-    z-index: 1; /* Coloca o conteúdo acima da imagem */
-    padding-top: 200px; /* Ajuste conforme a altura da imagem */
+    position: relative;
+    /* Garante que o conteúdo do card não sobreponha a imagem */
+    z-index: 1;
+    /* Coloca o conteúdo acima da imagem */
+    padding-top: 200px;
+    /* Ajuste conforme a altura da imagem */
 }
 
 .hero-card:hover {
@@ -81,8 +84,8 @@
 
 .slick-slide img {
     width: 100%;
-  }
-  
-  .slick-dots li button:before {
+}
+
+.slick-dots li button:before {
     color: #555;
-  }
+}

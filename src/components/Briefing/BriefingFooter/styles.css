@@ -1,14 +1,12 @@
 .briefing-footer {
-  position: fixed;
+  z-index: 4;
+  position: relative;
   left: 0;
   bottom: 0;
   width: 100%;
-  padding: 0.5rem 1rem;
   border-top: 1px solid #ddd;
-  background-color: white;
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
   box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.05);
 }
 

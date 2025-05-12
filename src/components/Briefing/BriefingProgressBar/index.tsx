@@ -1,8 +1,13 @@
-import React from 'react';
 import './styles.css';
 
 
-const BriefingProgressBar = ({ currentStep, totalSteps, percentage }) => {
+interface BriefingProgressBarProps {
+  currentStep: number;
+  totalSteps: number;
+  percentage: number;
+}
+
+const BriefingProgressBar: React.FC<BriefingProgressBarProps> = ({ currentStep, totalSteps, percentage }) => {
   const circles = Array.from({ length: totalSteps }, (_, i) => (
     <span key={i} className={`circle ${i < currentStep ? 'active' : ''}`}>
       {i === currentStep && (
@@ -16,7 +21,7 @@ const BriefingProgressBar = ({ currentStep, totalSteps, percentage }) => {
       <div className="status">
         <div className="status-left">
           <div className="stepCircle">
-            {currentStep === totalSteps ? '✓' : currentStep + 1} {/* Ajuste para Passo 3 de 3 */}
+            {currentStep === totalSteps ? '✓' : currentStep + 1}
           </div>
           <span className="stepText">
             {currentStep === totalSteps ? 'Concluído!' : `Passo ${currentStep + 1} de ${totalSteps}`}

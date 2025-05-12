@@ -1,7 +1,11 @@
 import React from 'react';
 import './styles.css';
 
-const Header: React.FC = ({ activeSection }) => {
+interface HeaderProps {
+  activeSection: string;
+}
+
+const Header: React.FC<HeaderProps> = ({ activeSection }) => {
   return (
 <div className="navbar">
   <div className="logo">Briffa</div>

@@ -15,7 +15,9 @@ export default function Question({ step, question, saveAnswer }) {
         <h3>{question.text}</h3>
 
         {question.type === 'open' && (
-          <OpenQuestion answer={question.answer} onChange={handleAnswer} />
+          <OpenQuestion
+            answer={question.answer}
+            onChange={handleAnswer} />
         )}
 
         {question.type === 'multiple-choice' && (

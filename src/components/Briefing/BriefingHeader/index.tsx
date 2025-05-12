@@ -3,10 +3,10 @@ import './styles.css';
 import { MdHome } from "react-icons/md";
 
 
-const BriefingHeader: React.FC = ({ activeSection }) => {
+const BriefingHeader: React.FC = () => {
   return (
-    <header>
-      <div className="simple-navbar">
+    <header className='briefing-header'>
+      <div className="briefing-header">
         <div className='simple-left-col'>Briffa</div>
         <div className="simple-center-col">
           <div className="rounded-frame">

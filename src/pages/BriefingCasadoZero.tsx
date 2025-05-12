@@ -1,133 +1,30 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './BriefingCasadoZero.css';
-import BriefingHeader from '../components/BriefingHeader';
-import BriefingFooter from '../components/BriefingFooter';
-import BriefingProgressBar from '../components/BriefingProgressBar';
+
+import BriefingHeader from '../components/Briefing/BriefingHeader';
+import BriefingFooter from '../components/Briefing/BriefingFooter';
+import BriefingProgressBar from '../components/Briefing/BriefingProgressBar';
 import QuestionRenderer from '../components/Questions/QuestionRenderer';
-import { FaHome, FaCouch, FaTree } from 'react-icons/fa';
-import { BiSolidLike, BiSolidDislike, BiQuestionMark } from "react-icons/bi";
+import { ResumoRespostas } from '../components/Questions/ResumoRespostas/ResumoRespostas';
 
-
-function ResumoRespostas({ answers }) {
-  const baixarRespostas = () => {
-    const blob = new Blob([JSON.stringify(answers, null, 2)], {
-      type: 'application/json',
-    });
-    const url = URL.createObjectURL(blob);
-    const link = document.createElement('a');
-    link.href = url;
-    link.download = 'respostas-briefing.json';
-    link.click();
-    URL.revokeObjectURL(url);
-  };
-
-  return (
-    <div className="resumo-container">
-      <h3>Resumo das Respostas:</h3>
-      <ul>
-  {Object.entries(answers).map(([step, { question, answer, imageUrl }]) => (
-    <li key={step}>
-      <strong>{question}</strong><br />
-      {answer || "(Sem resposta)"}
-      {imageUrl && (
-        <>
-          <br />
-          <em>Imagem: {imageUrl}</em>
-        </>
-      )}
-    </li>
-  ))}
-</ul>
-      <button onClick={baixarRespostas}>📥 Baixar respostas</button>
-    </div>
-  );
-}
+import { questions } from '../components/Briefing/CasadoZero';
 
 const BriefingCasadoZero: React.FC = () => {
-  const [answers, setAnswers] = useState({});
+  interface Answer {
+    question: string;
+    answer: string;
+    imageUrl: string;
+  }
 
-  const saveAnswer = (step, answer, question, imageUrl) => {
+  const [answers, setAnswers] = useState<Record<number, Answer>>({});
+  const [step, setStep] = useState(0);
+
+  const saveAnswer = (step: number, answer: string, question: string, imageUrl: string) => {
     setAnswers((prevAnswers) => ({
       ...prevAnswers,
       [step]: { question, answer, imageUrl },
     }));
   };
-
-  const questions = [
-    {
-      type: 'open',
-      question: 'Onde está localizado o terreno para execução do projeto? (Endereço completo)',
-    },
-    {
-      type: 'multiple-choice',
-      question: 'É localizado em algum condomínio? Se sim, qual? (Caso sim, anexar legislação do condomínio)',
-      icon: [<BiSolidLike  />, <BiSolidDislike  />],
-      options: ['Sim', 'Não'],
-    },
-    {
-      type: 'multiple-choice',
-      question: 'Você já possui Estudo topográfico do terreno?',
-      icon: [<BiSolidLike  />, <BiSolidDislike  />],
-      options: ['Sim', 'Não'],
-    },
-    {
-      type: 'multiple-choice',
-      question: 'Será térreo ou dois pavimentos?',
-      icon: [<BiSolidLike  />, <BiSolidDislike  />],
-      options: ['Térreo', 'Dois pavimentos', 'Mais de dois pavimentos', 'Ainda não defini'],
-    },
-    {
-      type: 'open',
-      question: 'Qual a previsão aproximada para o início do projeto?',
-    },
-    {
-      type: 'open',
-      question: 'Qual o prazo para a previsão aproximada para o início da obra?',
-    },
-    {
-      type: 'open',
-      question: 'Qual a sua maior exigência para esse projeto? Quais são suas expectativas? o que é indispensável pra você?',
-    },
-    {
-      type: 'open',
-      question: 'O que existe na sua atual residência que você não gosta e o que existe que você gostaria que tivesse nesse novo projeto?',
-    },
-    {
-      type: 'open',
-      question: 'Quantas pessoas irão morar na residência, qual a  idade e profissão desses moradores?',
-    },
-    {
-      type: 'open',
-      question: 'Quantos m² tem o terreno e quantos m² pretende construir?',
-    },
-    {
-      type: 'open',
-      question: 'Descreva os ambientes que possivelmente terão na residência: (exemplo: sala, cozinha, sala de jantar, 2 quartos, 1 suíte, closet, lavabo...)',
-    },
-    {
-      type: 'multiple-choice',
-      question: 'Algum portador de necessidades especiais irá utilizar a casa?',
-      icon: [<BiSolidLike  />, <BiSolidDislike  />, <BiQuestionMark />],
-      options: ['Sim', 'Não', 'Talvez'],
-    },
-    {
-      type: 'open',
-      question: 'Gostariam de piscina? Se sim com hidromassagem, com prainha, formato curvo, retangular, etc?',
-    },
-    {
-      type: 'multiple-choice',
-      question: 'Qual estilo você prefere?',
-      icon: [<FaHome />, <FaCouch />, <FaTree />],
-      options: ['Moderno', 'Clássico', 'Rústico'],
-    },
-    {
-      type: 'image-liking',
-      question: 'Você gosta dessa fachada?',
-      imageUrl: '/src/components/LandingPage/Projects/assets/comerciais.png',
-      options: ['Sim', 'Não', 'Talvez'],
-    },
-  ];
-  
 
   const steps = [
     ...questions.map((q, index) => ({
@@ -146,25 +43,48 @@ const BriefingCasadoZero: React.FC = () => {
     },
   ];
 
-  const [step, setStep] = useState(0);
   const totalSteps = steps.length;
   const percentage = (step / (totalSteps - 1)) * 100;
   const currentStepComponent = steps[step].component;
 
+  // Função para lidar com a navegação via teclado
+  const handleKeyDown = (event: KeyboardEvent) => {
+    if (event.key === 'ArrowLeft') {
+      setStep((prev) => Math.max(prev - 1, 0)); // Voltar, sem passar do passo 0
+    } else if (event.key === 'ArrowRight') {
+      
+      setStep((prev) => Math.min(prev + 1, totalSteps - 1)); // Avançar, sem passar do último passo
+    }
+  };
+
+  // Configurar o ouvinte de eventos de teclado
+  useEffect(() => {
+    window.addEventListener('keydown', handleKeyDown);
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown); // Limpar o ouvinte ao desmontar
+    };
+  }, [step, answers]); // Dependências para reavaliar a função handleKeyDown
+
   return (
-    <div>
+    <div className="container">
       <BriefingHeader />
-      <BriefingProgressBar
-        currentStep={step === totalSteps - 1 ? totalSteps - 1 : step}
-        totalSteps={totalSteps - 1}
-        percentage={step === totalSteps - 1 ? 100 : percentage}
-      />
-      {currentStepComponent}
+      <div className="centro">
+        <div className="progresso">
+          <BriefingProgressBar
+            currentStep={step === totalSteps - 1 ? totalSteps - 1 : step}
+            totalSteps={totalSteps - 1}
+            percentage={step === totalSteps - 1 ? 100 : percentage}
+          />
+        </div>
+        <div className="perguntas">{currentStepComponent}</div>
+      </div>
       <BriefingFooter
         step={step}
         totalSteps={totalSteps}
-        onBack={() => setStep(prev => Math.max(prev - 1, 0))}
-        onNext={() => setStep(prev => Math.min(prev + 1, totalSteps - 1))}
+        onBack={() => setStep((prev) => Math.max(prev - 1, 0))}
+        onNext={() => {
+          setStep((prev) => Math.min(prev + 1, totalSteps - 1));
+        }}
       />
     </div>
   );
