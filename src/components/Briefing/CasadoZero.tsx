@@ -22,7 +22,7 @@ export const questions = [
   {
     type: 'multiple-choice',
     question: 'Será térreo ou dois pavimentos?',
-    icon: [<BiSolidLike />, <BiSolidDislike />],
+    icon: [],
     options: ['Térreo', 'Dois pavimentos', 'Mais de dois pavimentos', 'Ainda não defini'],
   },
   {
