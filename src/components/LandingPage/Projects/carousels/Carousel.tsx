@@ -1,7 +1,8 @@
 import Slider from 'react-slick';
+import './Carousel.css';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import './carousel.css';
+
 
 const SimpleCarousel = ({ images }) => {
   const settings = {
@@ -18,13 +19,15 @@ const SimpleCarousel = ({ images }) => {
   };
 
   return (
-    <Slider {...settings}>
-      {images.map((src, index) => (
-        <div className="carousel-slide" key={index}>
-          <img src={src} alt={`Slide ${index + 1}`} />
-        </div>
-      ))}
-    </Slider>
+    <div>
+      <Slider {...settings}>
+        {images.map((src, index) => (
+          <div className="carousel-slide" key={index}>
+            <img src={src} alt={`Slide ${index + 1}`} />
+          </div>
+        ))}
+      </Slider>
+    </div>
   );
 };
 

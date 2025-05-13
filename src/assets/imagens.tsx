@@ -29,6 +29,16 @@ import banner from './landingpage/banner.png'
 import casaModerna from './landingpage/casaModerna.png'
 import designInteriores from './landingpage/designInteriores.png'
 import predioCorporativo from './landingpage/predioCorporativo.png'
+import erroProjeto from './landingpage/erroProjeto.jpg'
+import clienteConfuso from './landingpage/clienteConfuso.jpg'
+import arquiteturaNaoAdivinhacao from './landingpage/arquiteturaNaoAdivinhacao.jpg'
+import designInteligente from './landingpage/designInteligente.jpg'
+import briefingSalvador from './landingpage/briefingSalvador.jpg'
+import tempoEDinheiro from './landingpage/tempoEDinheiro.jpg'
+import reformasSemSurpresas from './landingpage/reformasSemSurpresas.jpg'
+import criatividadeDirecionada from './landingpage/criatividadeDirecionada.jpg'
+
+
 
 export const imagens = {
   telhadoplatibanda,
@@ -62,4 +72,12 @@ export const imagens = {
   casaModerna,
   designInteriores,
   predioCorporativo,
+  erroProjeto,
+  clienteConfuso,
+  arquiteturaNaoAdivinhacao,
+  designInteligente,
+  briefingSalvador,
+  tempoEDinheiro,
+  reformasSemSurpresas,
+  criatividadeDirecionada
 };
