@@ -1,6 +1,5 @@
 .projetos-container {
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-between;
   padding-left: 2rem;
   padding-right: 2rem;
@@ -10,9 +9,7 @@
   max-width: 25rem;
   display: flex;
   flex-direction: column;
-  background-color: white;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  overflow: hidden;
   margin-bottom: 2rem;
 }
 
