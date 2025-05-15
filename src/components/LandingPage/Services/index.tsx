@@ -22,6 +22,7 @@ const Services: React.FC = () => {
             <li><b>Espaço Kids:</b> Ambientes planejados para crianças (quartos ou brinquedotecas).</li>
             <li><b>Home Office Compacto:</b> Escritórios residenciais otimizados para trabalho remoto.</li>
               </ul>
+              <div className="right-text">Ver mais</div>
           </div>
         </div>
         <div className="services-card">
@@ -36,6 +37,7 @@ const Services: React.FC = () => {
             <li><b>Barbearia Moderna:</b> Design para barbearias ou salões masculinos.</li>
             <li><b>Salão de Beleza:</b> Espaços para estética e cuidados pessoais.</li>
               </ul>
+              <div className="right-text">Ver mais</div>
           </div></div>
         <div className="services-card">
         <div className='content'>
@@ -50,6 +52,7 @@ const Services: React.FC = () => {
             <li><b>Espaço de Descompressão:</b> Áreas de descanso para funcionários.</li>
             <li><b>Escritório Sustentável:</b> Projetos com foco em eficiência energética e materiais ecológicos.</li>
               </ul>
+              <div className="right-text">Ver mais</div>
           </div></div>
       </div>
     </section>
