@@ -1,4 +1,10 @@
-export default function OpenQuestion({ questionText, answer, onChange }) {
+interface OpenQuestionProps {
+  questionText: string;
+  answer: string;
+  onChange: (value: string) => void;
+}
+
+export default function OpenQuestion({ questionText, answer, onChange }: OpenQuestionProps) {
   return (
     <div className="input-container">
       <div className="input-question">

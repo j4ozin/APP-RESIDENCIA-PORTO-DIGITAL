@@ -1,4 +1,11 @@
-export default function ShortOpenQuestion({ questionText, answer, onChange, inputType }) {
+interface ShortOpenQuestionProps {
+  questionText: string;
+  answer: string;
+  onChange: (value: string) => void;
+  inputType: string;
+}
+
+export default function ShortOpenQuestion({ questionText, answer, onChange, inputType }: ShortOpenQuestionProps) {
   return (
     <div className="input-container">
       <div className="input-question">

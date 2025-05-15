@@ -1,7 +1,12 @@
 import { useState } from 'react';
 import './styles.css';
 
-export default function AddressForm({ questionText, answer, onChange }) {
+interface AddressFormProps {
+  questionText: string;
+  onChange: (address: { [key: string]: string }) => void;
+}
+
+export default function AddressForm({ questionText, onChange }: AddressFormProps) {
   const [address, setAddress] = useState({
     cep: '',
     logradouro: '',
@@ -14,7 +19,7 @@ export default function AddressForm({ questionText, answer, onChange }) {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
 
-  const handleCepChange = async (cep) => {
+  const handleCepChange = async (cep: string) => {
     const cleanedCep = cep.replace(/\D/g, '');
     setAddress({ ...address, cep: cleanedCep });
     setError('');
@@ -48,7 +53,7 @@ export default function AddressForm({ questionText, answer, onChange }) {
           });
         }
       } catch (err) {
-        setError('Erro ao consultar o CEP');
+        setError(`Erro ao consultar o CEP: ${err}`);
       } finally {
         setLoading(false);
       }
@@ -57,7 +62,7 @@ export default function AddressForm({ questionText, answer, onChange }) {
     onChange({ ...address, cep: cleanedCep });
   };
 
-  const handleInputChange = (field, value) => {
+  const handleInputChange = (field: string, value: string) => {
     const updatedAddress = { ...address, [field]: value };
     setAddress(updatedAddress);
     onChange(updatedAddress);

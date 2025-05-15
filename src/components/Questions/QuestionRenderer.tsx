@@ -10,15 +10,6 @@ import YesNoWithFileUpload from './YesNoWithFileUploadQuestion';
 import ShortOpenQuestion from './ShortOpenQuestion';
 import AddressForm from './AddressForm';
 
-interface QuestionData {
-  type: string;
-  question: string;
-  options?: string[];
-  icon?: string | never[];
-  imageUrl?: string;
-  followup?: string;
-}
-
 interface QuestionRendererProps {
   step: number;
   questionData: QuestionData;
@@ -26,7 +17,17 @@ interface QuestionRendererProps {
   saveAnswer: (step: number, value: unknown, question: string, imageUrl?: string) => void;
 }
 
-
+interface QuestionData {
+  type: string;
+  question: string;
+  options?: { label: string; imageUrl: string }[]; // Updated to match the provided data structure
+  followUp?: string;
+  uploadLabel?: string;
+  icon?: React.ReactNode;
+  inputType?: string;
+  followup?: string;
+  imageUrl?: string;
+}
 
 export default function QuestionRenderer({ step, questionData, answer, saveAnswer }: QuestionRendererProps) {
   const handleAnswer = (value: unknown) => {
@@ -35,18 +36,17 @@ export default function QuestionRenderer({ step, questionData, answer, saveAnswe
 
   switch (questionData.type) {
     case 'address':
-  return (
-    <AddressForm
-      questionText={questionData.question}
-      answer={answer}
-      onChange={handleAnswer}
-    />
-  );
+      return (
+        <AddressForm
+          questionText={questionData.question}
+          onChange={handleAnswer}
+        />
+      );
     case 'open':
       return (
         <OpenQuestion
           questionText={questionData.question}
-          answer={answer as string | { tipo: string; detalhe?: string }}
+          answer={typeof answer === 'string' ? answer : ''}
           onChange={handleAnswer}
         />
 
@@ -55,77 +55,110 @@ export default function QuestionRenderer({ step, questionData, answer, saveAnswe
       return (
         <ShortOpenQuestion
           questionText={questionData.question}
-          answer={answer as string | { tipo: string; detalhe?: string }}
+          answer={typeof answer === 'string' ? answer : ''}
           onChange={handleAnswer}
-          inputType={questionData.inputType}
+          inputType={questionData.inputType || 'text'}
         />
       );
-    case 'multiple-choice':
+    case 'multiple-choice': {
+      const options = (questionData.options ?? []).map(opt =>
+        typeof opt === 'string' ? opt : opt.label
+      );
+      const icon = Array.isArray(questionData.icon) ? questionData.icon : [];
       return (
         <MultipleChoiceQuestion
           questionText={questionData.question}
-          options={questionData.options}
-          answer={answer}
+          options={options}
+          answer={typeof answer === 'string' ? answer : ''}
           onChange={handleAnswer}
-          icon={questionData.icon}
+          icon={icon}
         />
       );
-    case 'image-liking':
+    }
+    case 'image-liking': {
+      const options = (questionData.options ?? []).map(opt =>
+        typeof opt === 'string' ? opt : opt.label
+      );
+
       return (
         <ImageLikingQuestion
           questionText={questionData.question}
-          imageUrl={questionData.imageUrl}
-          options={questionData.options}
-          answer={answer}
+          imageUrl={questionData.imageUrl || ''}
+          options={options}
+          answer={typeof answer === 'string' ? answer : ''}
           onChange={(value: unknown) => saveAnswer(step, value, questionData.question, questionData.imageUrl)}
         />
       );
-    case 'multiple-choice-other':
-
+    }
+    case 'multiple-choice-other': {
+      const options = (questionData.options ?? []).map(opt =>
+        typeof opt === 'string' ? opt : opt.label
+      );
 
       return (
         <MultipleChoiceWithOtherQuestion
           questionText={questionData.question}
-          options={questionData.options}
-          answer={answer}
+          options={options}
+          answer={typeof answer === 'string' ? answer : ''}
           onChange={handleAnswer}
-          icon={questionData.icon}
+          icon={Array.isArray(questionData.icon) ? (questionData.icon as string[]) : undefined}
         />
       );
+    }
     case 'yes-no-follow-up':
+      { const validAnswer =
+        typeof answer === 'string' && (answer === 'Sim' || answer === 'Não')
+          ? answer
+          : typeof answer === 'object' &&
+            answer !== null &&
+            'tipo' in answer &&
+            'detalhe' in answer &&
+            typeof answer.tipo === 'string' &&
+            (answer.tipo === 'Sim' || answer.tipo === 'Não')
+            ? { tipo: (answer as { tipo: string; detalhe: string }).tipo, detalhe: (answer as { tipo: string; detalhe: string }).detalhe }
+            : undefined;
+      console.log('answer bruto:', answer);
+      console.log('validAnswer:', validAnswer);
+      console.log('questionData.followUp:', questionData.followUp);
       return (
         <YesNoWithFollowUpQuestion
           questionText={questionData.question}
-          answer={answer}
+          answer={validAnswer || ''}
           onChange={handleAnswer}
-          followUp={questionData.followup}
+          followUp={questionData.followUp || 'Por favor, forneça mais detalhes'}
         />
-      );
+      ); }
     case 'visual-multiple-choice':
       return (
         <VisualMultipleChoiceQuestion
           questionText={questionData.question}
           options={questionData.options}
-          answer={answer}
+          answer={Array.isArray(answer) ? (answer as string[]) : undefined}
           onChange={handleAnswer}
         />
       );
     case 'visual-multiple-choice-other':
       return (
         <VisualMultipleChoiceWithOtherQuestion
+          key={`step-${step}`}
           questionText={questionData.question}
-          options={questionData.options}
-          answer={(answer as string[]) || []}
+          options={questionData.options || []}
           onChange={handleAnswer}
+          answer={Array.isArray(answer) ? answer : []}
         />
       );
     case 'yes-no-upload-file':
       return (
         <YesNoWithFileUpload
           questionText={questionData.question}
-          uploadLabel={questionData.uploadLabel}
-          answer={answer}
-          followUp={questionData.followUp}
+          uploadLabel={questionData.uploadLabel || 'Anexe um arquivo'}
+          answer={
+            typeof answer === 'string' ||
+              (typeof answer === 'object' && answer !== null && 'tipo' in answer && typeof (answer as { tipo: unknown }).tipo === 'string')
+              ? (answer as { tipo: string; file?: File; detalhe?: string })
+              : ''
+          }
+          followUp={questionData.followUp || ''}
           onChange={handleAnswer}
         />);
     default:

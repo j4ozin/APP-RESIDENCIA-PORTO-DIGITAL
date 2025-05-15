@@ -1,80 +1,88 @@
 import React, { useState, useEffect } from 'react';
 
+interface VisualMultipleChoiceWithOtherQuestionProps {
+  questionText: string;
+  options?: Array<string | { label: string; imageUrl?: string }>;
+  answer?: string[];
+  onChange: (updatedAnswer: string[]) => void;
+}
+
 export default function VisualMultipleChoiceWithOtherQuestion({
   questionText,
   options = [],
   answer = [],
   onChange,
-}) {
-  const [selectedOptions, setSelectedOptions] = useState([]);
+}: VisualMultipleChoiceWithOtherQuestionProps) {
+  const [selectedOptions, setSelectedOptions] = useState<string[]>([]);
   const [otherValue, setOtherValue] = useState('');
 
-useEffect(() => {
-  const allOptionLabels = options.map((opt) =>
-    typeof opt === 'string' ? opt : opt.label
-  );
+  useEffect(() => {
+    console.log('useEffect triggered - Answer:', answer, 'Options:', options);
+    if (Array.isArray(answer)) {
+      const validOptions = options.map((opt) => (typeof opt === 'string' ? opt : opt.label));
+      const selected = answer.filter((ans) => validOptions.includes(ans) || ans === 'Outro');
+      
+      // Só atualiza se não houver digitação ativa
+      if (!otherValue || !selectedOptions.includes('Outro')) {
+        setSelectedOptions(selected);
+      }
 
-  const hasOther = answer.find((item) => !allOptionLabels.includes(item));
-  const selected = answer.filter((item) => allOptionLabels.includes(item));
-
-  if (hasOther) {
-    setSelectedOptions([...selected, 'Outro']);
-    setOtherValue(hasOther === 'Outro' ? '' : hasOther); // Se hasOther for "Outro", inicialize vazio
-  } else {
-    setSelectedOptions(selected);
-    setOtherValue('');
-  }
-}, [answer, options]);
-
-
-const toggleOption = (label) => {
-  let updatedOptions = [...selectedOptions];
-
-  if (selectedOptions.includes(label)) {
-    // Desmarcar a opção
-    updatedOptions = updatedOptions.filter((o) => o !== label);
-
-    if (label === 'Outro') {
-      setOtherValue(''); // Limpar campo "Outro"
+      const otherAnswer = answer.find((ans) => !validOptions.includes(ans) && ans !== 'Outro');
+      if (!otherValue || !selectedOptions.includes('Outro')) {
+        setOtherValue(otherAnswer || '');
+      }
+      console.log('useEffect - Answer:', answer, 'Selected:', selected, 'Other:', otherAnswer);
+    } else {
+      setSelectedOptions([]);
+      setOtherValue('');
+      console.log('useEffect - Answer is not an array:', answer);
     }
-  } else {
-    // Marcar a opção
-    updatedOptions.push(label);
+  }, [answer, options, otherValue, selectedOptions]);
 
-    if (label === 'Outro') {
-      setOtherValue(''); // Inicializar vazio ao selecionar "Outro"
+  const toggleOption = (label: string) => {
+    console.log('toggleOption - Label:', label);
+    let updatedOptions = [...selectedOptions];
+
+    if (selectedOptions.includes(label)) {
+      updatedOptions = updatedOptions.filter((o) => o !== label);
+      if (label === 'Outro') {
+        setOtherValue('');
+      }
+    } else {
+      updatedOptions.push(label);
     }
-  }
 
-  setSelectedOptions(updatedOptions);
+    setSelectedOptions(updatedOptions);
 
-  // Enviar as opções e o valor de 'Outro' se houver algo digitado
-  if (updatedOptions.includes('Outro') && otherValue.trim()) {
-    onChange([...updatedOptions.filter((o) => o !== 'Outro'), otherValue]);
-  } else {
-    onChange(updatedOptions);
-  }
-};
+    const finalAnswer = updatedOptions.includes('Outro') && otherValue.trim()
+      ? [...updatedOptions.filter((o) => o !== 'Outro'), otherValue]
+      : updatedOptions;
 
-const handleOtherChange = (e) => {
-  const value = e.target.value;
-  setOtherValue(value);
+    console.log('toggleOption - Updated Options:', updatedOptions, 'Final Answer:', finalAnswer);
+    onChange(finalAnswer);
+  };
 
-  // Enviar as opções e o valor digitado de 'Outro'
-  const updated = [
-    ...selectedOptions.filter((o) => o !== 'Outro'),
-    ...(value.trim() ? [value] : []),
-  ];
+  const handleOtherChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
+    console.log('handleOtherChange - Input value:', value);
+    setOtherValue(value);
 
-  onChange(updated);
-};
+    const finalAnswer = [
+      ...selectedOptions.filter((o) => o !== 'Outro'),
+      ...(value.trim() ? [value] : []),
+    ];
+
+    console.log('handleOtherChange - Final Answer:', finalAnswer);
+    onChange(finalAnswer);
+  };
+
   return (
     <div className="visual-multiple-choice-other">
       <h3>{questionText}</h3>
       <div className="visual-options-grid">
         {options.map((option) => {
           const label = typeof option === 'string' ? option : option.label;
-          const imageUrl = option.imageUrl;
+          const imageUrl = typeof option === 'object' && 'imageUrl' in option ? option.imageUrl : undefined;
 
           return (
             <div
@@ -108,7 +116,12 @@ const handleOtherChange = (e) => {
             type="text"
             placeholder="Digite sua resposta"
             value={otherValue}
-            onChange={handleOtherChange}
+            onChange={(e) => {
+              console.log('Input onChange - Raw value:', e.target.value);
+              handleOtherChange(e);
+            }}
+            onFocus={() => console.log('Input focused')}
+            onBlur={() => console.log('Input blurred')}
             className="other-input"
           />
         )}

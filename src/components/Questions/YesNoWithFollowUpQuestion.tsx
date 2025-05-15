@@ -14,16 +14,20 @@ export default function YesNoWithFollowUpQuestion({ questionText, followUp, answ
   const [detail, setDetail] = useState('');
 
   useEffect(() => {
+    console.log('useEffect - answer:', answer);
     if (typeof answer === 'object' && answer?.tipo === 'Sim') {
       setSelected('Sim');
       setDetail(answer.detalhe || '');
     } else if (answer === 'Sim' || answer === 'Não') {
       setSelected(answer);
       setDetail('');
+    } else {
+      console.log('answer em formato inesperado:', answer);
     }
   }, [answer]);
 
   const handleSelect = (opt: string) => {
+    console.log('handleSelect - opt:', opt);
     setSelected(opt);
     if (opt === 'Não') {
       setDetail('');
@@ -38,6 +42,8 @@ export default function YesNoWithFollowUpQuestion({ questionText, followUp, answ
     setDetail(val);
     onChange({ tipo: 'Sim', detalhe: val });
   };
+
+  console.log('Renderizando - selected:', selected, 'followUp:', followUp);
 
   return (
     <div className="multiple-choice-container">
@@ -65,6 +71,7 @@ export default function YesNoWithFollowUpQuestion({ questionText, followUp, answ
             placeholder={followUp}
             value={detail}
             onChange={handleDetailChange}
+            style={{ display: 'block', width: '100%', height: '100px', border: '1px solid black' }}
           />
         </div>
       )}

@@ -1,6 +1,14 @@
 import './styles.css';
 
-export default function ImageLikingQuestion({ questionText, imageUrl, options, answer, onChange }) {
+interface ImageLikingQuestionProps {
+  questionText: string;
+  imageUrl: string;
+  options: string[];
+  answer: string;
+  onChange: (option: string) => void;
+}
+
+export default function ImageLikingQuestion({ questionText, imageUrl, options, answer, onChange }: ImageLikingQuestionProps) {
   return (
     <div className="image-like">
       <div className="image-like-horizontal">

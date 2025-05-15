@@ -4,11 +4,15 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
 
-const SimpleCarousel = ({ images }) => {
+interface SimpleCarouselProps {
+  images: string[];
+}
+
+const SimpleCarousel = ({ images }: SimpleCarouselProps) => {
   const settings = {
     dots: true,
     customPaging: () => <div className="custom-dot">{'>'}</div>,
-    appendDots: dots => <div className="custom-dots-wrapper">{dots}</div>,
+    appendDots: (dots: React.ReactNode) => <div className="custom-dots-wrapper">{dots}</div>,
     infinite: true,
     speed: 500,
     slidesToShow: 1,
