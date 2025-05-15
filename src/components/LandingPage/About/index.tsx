@@ -1,5 +1,7 @@
 import React from 'react';
 import './styles.css';
+import { imagens } from '../../../assets/imagens';
+
 
 const About: React.FC = () => {
   return (
@@ -11,7 +13,7 @@ const About: React.FC = () => {
             </p>
           </div>
           <div className="image">
-            <img src="src\components\LandingPage\About\assets\about.png" alt="Planta técnica" />
+            <img src={imagens.about} alt="Planta técnica" />
           </div>
       </section>
   );

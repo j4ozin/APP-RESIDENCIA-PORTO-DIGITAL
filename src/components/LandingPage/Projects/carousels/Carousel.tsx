@@ -1,13 +1,18 @@
 import Slider from 'react-slick';
+import './Carousel.css';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import './carousel.css';
 
-const SimpleCarousel = ({ images }) => {
+
+interface SimpleCarouselProps {
+  images: string[];
+}
+
+const SimpleCarousel = ({ images }: SimpleCarouselProps) => {
   const settings = {
     dots: true,
     customPaging: () => <div className="custom-dot">{'>'}</div>,
-    appendDots: dots => <div className="custom-dots-wrapper">{dots}</div>,
+    appendDots: (dots: React.ReactNode) => <div className="custom-dots-wrapper">{dots}</div>,
     infinite: true,
     speed: 500,
     slidesToShow: 1,
@@ -18,13 +23,15 @@ const SimpleCarousel = ({ images }) => {
   };
 
   return (
-    <Slider {...settings}>
-      {images.map((src, index) => (
-        <div className="carousel-slide" key={index}>
-          <img src={src} alt={`Slide ${index + 1}`} />
-        </div>
-      ))}
-    </Slider>
+    <div>
+      <Slider {...settings}>
+        {images.map((src, index) => (
+          <div className="carousel-slide" key={index}>
+            <img src={src} alt={`Slide ${index + 1}`} />
+          </div>
+        ))}
+      </Slider>
+    </div>
   );
 };
 
