@@ -32,16 +32,21 @@ export default function VisualMultipleChoiceQuestion({ questionText, options, an
     <div className="visual-multiple-choice-container">
       <h3>{questionText}</h3>
       <div className="visual-options-grid">
-        {options.map(({ label, imageUrl }, index) => (
-          <div
-            key={index}
-            className={`visual-option ${selectedOptions.includes(label) ? 'selected' : ''}`}
-            onClick={() => toggleOption(label)}
-          >
-            <img src={imageUrl} alt={label} />
-            <span>{label}</span>
-          </div>
-        ))}
+        {options?.map((option, index) => {
+          const label = typeof option === 'string' ? option : option.label;
+          const imageUrl = typeof option === 'string' ? undefined : option.imageUrl;
+
+          return (
+            <div
+              key={index}
+              className={`visual-option ${selectedOptions.includes(label) ? 'selected' : ''}`}
+              onClick={() => toggleOption(label)}
+            >
+              {imageUrl && <img src={imageUrl} alt={label} />}
+              <span>{label}</span>
+            </div>
+          );
+        })}
       </div>
     </div>
   );
