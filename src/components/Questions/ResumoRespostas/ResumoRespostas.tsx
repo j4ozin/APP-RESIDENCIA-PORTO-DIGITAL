@@ -1,4 +1,10 @@
-export function ResumoRespostas({ answers }) {
+import { ReactElement, JSXElementConstructor, ReactNode, ReactPortal } from "react";
+
+interface ResumoRespostasProps {
+  answers: Record<string, { question: string; answer: string | number | string[] | Record<string, unknown>; imageUrl?: string }>;
+}
+
+export function ResumoRespostas({ answers }: ResumoRespostasProps) {
   const baixarRespostas = () => {
     const blob = new Blob([JSON.stringify(answers, null, 2)], {
       type: 'application/json',
@@ -11,7 +17,7 @@ export function ResumoRespostas({ answers }) {
     URL.revokeObjectURL(url);
   };
 
-  const renderAnswer = (answer) => {
+  const renderAnswer = (answer: string | number | bigint | boolean | unknown[] | Record<string, unknown> | ReactElement<unknown, string | JSXElementConstructor<unknown>> | Iterable<ReactNode> | Promise<string | number | bigint | boolean | ReactPortal | ReactElement<unknown, string | JSXElementConstructor<unknown>> | Iterable<ReactNode> | null | undefined> | ArrayLike<unknown> | null | undefined) => {
     if (typeof answer === 'string' || typeof answer === 'number') {
       return <span>{answer}</span>;
     }
