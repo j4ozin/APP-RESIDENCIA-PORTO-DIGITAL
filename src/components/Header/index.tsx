@@ -1,5 +1,6 @@
 import React from 'react';
 import './styles.css';
+import { Link } from 'react-router-dom';
 
 interface HeaderProps {
   activeSection: string;
@@ -16,7 +17,7 @@ const Header: React.FC<HeaderProps> = ({ activeSection }) => {
     <a href="#services" className={activeSection === "services" ? "active" : ""}>Serviços</a>
     <a href="#contact" className={activeSection === "contact" ? "active" : ""}>Contato</a>
   </div>
-  <div className="colthree"><a href="/login">Login</a></div>
+  <div className="colthree"><Link to= {'/login'}>Login</Link></div>
 </div>
 
   );
