@@ -1,23 +1,18 @@
 import React from 'react';
 import './styles.css';
 import SimpleCarousel from './carousels/Carousel';
+import { imagens } from '../../../assets/imagens';
 
 const residencialImages = [
-  'src/components/LandingPage/Projects/carousels/imgs/residenciais1.jpg',
-  'src/components/LandingPage/Projects/carousels/imgs/residenciais2.jpg',
-  'src/components/LandingPage/Projects/carousels/imgs/residenciais3.jpg',
+  imagens.residenciais1, imagens.residenciais2, imagens.residenciais3,
 ];
 
 const comercialImages = [
-  'src/components/LandingPage/Projects/carousels/imgs/comerciais1.jpg',
-  'src/components/LandingPage/Projects/carousels/imgs/comerciais2.jpg',
-  'src/components/LandingPage/Projects/carousels/imgs/comerciais3.jpg',
+  imagens.comerciais1, imagens.comerciais2, imagens.comerciais3,
 ];
 
 const corporativoImages = [
-  'src/components/LandingPage/Projects/carousels/imgs/corporativos1.jpg',
-  'src/components/LandingPage/Projects/carousels/imgs/corporativos2.jpg',
-  'src/components/LandingPage/Projects/carousels/imgs/corporativos3.jpg',
+  imagens.corporativos1, imagens.corporativos2, imagens.corporativos3,
 ];
 
 const projetos = [
