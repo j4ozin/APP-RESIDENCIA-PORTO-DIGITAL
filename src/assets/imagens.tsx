@@ -37,7 +37,15 @@ import briefingSalvador from './landingpage/briefingSalvador.jpg'
 import tempoEDinheiro from './landingpage/tempoEDinheiro.jpg'
 import reformasSemSurpresas from './landingpage/reformasSemSurpresas.jpg'
 import criatividadeDirecionada from './landingpage/criatividadeDirecionada.jpg'
-
+import comerciais1 from './landingpage/projects/comerciais1.jpg'
+import comerciais2 from './landingpage/projects/comerciais2.jpg'
+import comerciais3 from './landingpage/projects/comerciais3.jpg'
+import corporativos1 from './landingpage/projects/corporativos1.jpg'
+import corporativos2 from './landingpage/projects/corporativos2.jpg'
+import corporativos3 from './landingpage/projects/corporativos3.jpg'
+import residenciais1 from './landingpage/projects/residenciais1.jpg'
+import residenciais2 from './landingpage/projects/residenciais2.jpg'
+import residenciais3 from './landingpage/projects/residenciais3.jpg'
 
 
 export const imagens = {
@@ -79,5 +87,14 @@ export const imagens = {
   briefingSalvador,
   tempoEDinheiro,
   reformasSemSurpresas,
-  criatividadeDirecionada
+  criatividadeDirecionada,
+  comerciais1,
+  comerciais2,
+  comerciais3,
+  corporativos1,
+  corporativos2,
+  corporativos3,
+  residenciais1,
+  residenciais2,
+  residenciais3
 };
