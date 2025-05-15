@@ -75,6 +75,11 @@ textarea.area {
   font-size: 1.2rem;
 }
 
+.choice-button:focus-visible,
+.visual-option:focus-visible {
+  outline: 3px solid #4a90e2;
+}
+
 .image-like {
   justify-content: center;
   align-items: center;
@@ -83,7 +88,6 @@ textarea.area {
   height: 100%;
   flex-direction: row;
   padding: 0;
-  gap: 0;
   gap: 5rem;
 }
 
@@ -140,6 +144,7 @@ textarea.area {
 
 .image-like-options button:hover,
 .image-like-options .selected {
+
   background-color: #c4a962;
   border-color: #c4a962;
   color: white;
@@ -195,8 +200,8 @@ textarea.area {
 }
 
 .visual-option img {
-  min-width: 10rem;
-  min-height: 10rem;
+  max-width: 100%;
+  height: auto;
   object-fit: cover;
 }
 
@@ -299,6 +304,10 @@ textarea.area {
   font-size: 12px;
   color: #d32f2f;
   margin-top: 6px;
+}
+
+input.invalid {
+  border-color: #d32f2f;
 }
 
 @media (max-width: 768px) {

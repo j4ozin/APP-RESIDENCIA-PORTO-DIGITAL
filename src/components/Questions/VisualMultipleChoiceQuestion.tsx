@@ -1,8 +1,15 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import './styles.css';
 
-export default function VisualMultipleChoiceQuestion({ questionText, options, answer = [], onChange }) {
-  const [selectedOptions, setSelectedOptions] = useState([]);
+interface VisualMultipleChoiceQuestionProps {
+  questionText: string;
+  options?: Array<string | { label: string; imageUrl?: string }>;
+  answer?: string[];
+  onChange: (updated: string[]) => void;
+}
+
+export default function VisualMultipleChoiceQuestion({ questionText, options, answer = [], onChange }: VisualMultipleChoiceQuestionProps) {
+  const [selectedOptions, setSelectedOptions] = useState<string[]>([]);
 
   useEffect(() => {
     if (Array.isArray(answer)) {
@@ -10,7 +17,7 @@ export default function VisualMultipleChoiceQuestion({ questionText, options, an
     }
   }, [answer]);
 
-  const toggleOption = (label) => {
+  const toggleOption = (label: string) => {
     let updated;
     if (selectedOptions.includes(label)) {
       updated = selectedOptions.filter(opt => opt !== label);

@@ -1,7 +1,21 @@
 import React, { useState, useEffect } from 'react';
 import './styles.css';
 
-export default function MultipleChoiceWithOtherQuestion({ questionText, options, answer, onChange, icon = [] }) {
+interface MultipleChoiceWithOtherQuestionProps {
+  questionText: string;
+  options: string[];
+  answer: string;
+  onChange: (value: string) => void;
+  icon?: React.ReactNode[];
+}
+
+export default function MultipleChoiceWithOtherQuestion({
+  questionText,
+  options,
+  answer,
+  onChange,
+  icon = [],
+}: MultipleChoiceWithOtherQuestionProps) {
   const [selected, setSelected] = useState('');
   const [otherText, setOtherText] = useState('');
 
@@ -16,7 +30,7 @@ useEffect(() => {
 }, [answer, options]);
 
 
-  const handleSelect = (opt) => {
+  const handleSelect = (opt: string) => {
     setSelected(opt);
     if (opt !== 'Outro') {
       onChange(opt);
@@ -24,7 +38,7 @@ useEffect(() => {
     }
   };
 
-  const handleOtherChange = (e) => {
+  const handleOtherChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
     setOtherText(value);
     onChange(value);

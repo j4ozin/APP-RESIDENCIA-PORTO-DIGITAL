@@ -3,7 +3,7 @@ import './styles.css';
 import { MdKeyboardDoubleArrowLeft } from "react-icons/md";
 
 
-const SimpleHeader: React.FC = ({ activeSection }) => {
+const SimpleHeader: React.FC = () => {
   return (
     <header>
 <div className="simple-navbar">

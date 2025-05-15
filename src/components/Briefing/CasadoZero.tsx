@@ -271,7 +271,7 @@ export const questions = [
   {
     type: 'image-liking',
     question: 'Gostaria de um espaço voltado para exercícios físicos?',
-    imageUrl: imagens.brises,
+    imageUrl: imagens.academia,
     options: ['Sim', 'Não', 'Talvez'],
   },
   {

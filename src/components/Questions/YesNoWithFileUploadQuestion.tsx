@@ -6,8 +6,8 @@ interface YesNoWithFileUploadProps {
   questionText: string;
   uploadLabel: string;
   followUp: string;
-  answer: string | { tipo: string; file?: File };
-  onChange: (value: string | { tipo: string; file?: File }) => void;
+  answer: string | { tipo: string; file?: File; detalhe?: string };
+  onChange: (value: string | { tipo: string; file?: File; detalhe?: string }) => void;
 }
 
 export default function YesNoWithFileUpload({ followUp, questionText, uploadLabel, answer, onChange }: YesNoWithFileUploadProps) {
