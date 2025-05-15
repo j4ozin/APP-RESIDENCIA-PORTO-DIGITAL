@@ -1,7 +1,5 @@
 # 🌿 Briffa - Simplificando Briefings de Arquitetura
 
-![Briffa Banner](https://via.placeholder.com/800x200.png?text=Briffa+-+Briefings+Simples+e+Claros)
-
 **Briffa** é uma plataforma intuitiva para arquitetos e clientes organizarem briefings de projetos de forma clara e eficiente. Desenvolvido por **Squad 10** na *Residência Tecnológica* do *Porto Digital* com *Faculdade Senac Pernambuco* e *Bambu/Primeiro Piso*.
 
 ---
