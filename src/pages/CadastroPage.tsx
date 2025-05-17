@@ -1,16 +1,20 @@
 import React from 'react';
-import './CadastroPageStyle.css';
-import Cadastro from '../components/CadastroForm'; 
+import './styles.css';
 import SimpleHeader from '../components/SimpleHeader';
+import Cadastro from '../components/CadastroForm';
 
-
-const CadastroPage: React.FC = () => {
+const Login: React.FC = () => {
   return (
-    <div className="cadastro-page">
+    <>
+      <header>
         <SimpleHeader />
+      </header>
+      <main className="cad-log-main">
+        <h2>Cadastro</h2>
         <Cadastro />
-    </div>
+      </main>
+    </>
   );
 };
 
-export default CadastroPage;
+export default Login;

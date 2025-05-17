@@ -1,16 +1,21 @@
 import React from 'react';
 import './styles.css';
 import { MdKeyboardDoubleArrowLeft } from "react-icons/md";
-
+import Logo from '../Logo';
 
 const SimpleHeader: React.FC = () => {
   return (
-    <header>
-<div className="simple-navbar">
-  <div className='simple-logo'>Briffa</div>
-  <div><a href="/" className='simple-right-col'><MdKeyboardDoubleArrowLeft /> Voltar para o site</a></div>
-</div>
-</header>
+    <header className="simple-container">
+      <div className="simple-left-col">
+        <Logo />
+      </div>
+      <div className="simple-right-col">
+        <a href="/" className="back-link">
+          <MdKeyboardDoubleArrowLeft />
+          Voltar para o site
+        </a>
+      </div>
+    </header>
   );
 };
 

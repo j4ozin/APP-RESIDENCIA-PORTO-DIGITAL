@@ -1,0 +1,65 @@
+.profile-form-actions-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.profile-form-actions {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.profile-button {
+    font-size: 0.95rem;
+    border-radius: 4px;
+    cursor: pointer;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    gap: 0.5rem;
+}
+
+.profile-button.delete {
+    background-color: #fee2e1;
+    color: #e74c3c;
+    border: none;
+}
+
+.profile-button.delete:hover {
+    background-color: #f8b8b2;
+}
+
+.profile-button.save {
+    background-color: #e2f7e6;
+    color: #2e7d32;
+    border: none;
+}
+
+.profile-button.save:hover {
+    background-color: #b9eec6;
+}
+
+.profile-button.password {
+    background-color: #f3f3f3;
+    color: #666;
+    border: 1px solid #ccc;
+}
+
+.profile-button.password:hover {
+    background-color: #e0e0e0;
+}
+
+.save-confirmation {
+    padding-top: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    color: #4caf50;
+}
