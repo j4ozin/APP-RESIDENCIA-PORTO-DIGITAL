@@ -1,0 +1,35 @@
+.notification-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 2rem;
+}
+
+.notification-icon {
+    color: #6b7280;
+    font-size: 18px;
+}
+
+.notification-header h3 {
+    color: #1f2937;
+    margin: 0;
+    font-size: 16px;
+}
+
+.notification-options {
+    display: flex;
+    flex-direction: row;
+}
+
+.checkbox-option {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: #4b5563;
+}
+
+.checkbox-option input {
+    margin: 0;
+    transform: scale(1.5);  
+}

@@ -1,38 +1,36 @@
-.briefing-header {
-  width: 100%;
+.briefing-header-container {
   z-index: 1;
   position: relative;
   display: flex;
+  flex-direction: row;
   align-items: center;
-  justify-content: space-between;
-  padding: 20px 0;
-  box-sizing: border-box;
-  height: 80px;
 }
 
-.simple-left-col,
-.simple-center-col,
-.simple-right-col {
+.briefing-header-left-col,
+.briefing-header-center-col,
+.briefing-header-right-col {
   flex: 1;
   display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
-.simple-left-col {
+.briefing-header-left-col {
   justify-content: flex-start;
   font-size: 1.6rem;
-  font-weight: 300;
-  padding-left: 3rem;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
 }
 
-.simple-right-col {
-  justify-content: flex-end;
+.briefing-header-right-col {
+  align-items: center;
+  justify-content: center;
+  display: flex;
   font-size: 0.8rem;
 }
 
-.simple-center-col {
+.briefing-header-center-col {
   justify-content: center;
+  align-items: center;
 }
 
 .rounded-frame {
@@ -63,3 +61,6 @@
   font-weight: 600;
 }
 
+.blank {
+  flex:1;
+}

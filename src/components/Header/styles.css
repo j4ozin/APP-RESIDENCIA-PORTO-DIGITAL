@@ -2,24 +2,22 @@
   font-family: 'Poppins', sans-serif;
   display: flex;
   align-items: center;
-  padding: 20px 60px;
-  max-width: 1400px;
-  margin: 0 auto;
+  position: fixed;
 }
 
-.logo {
-  flex: 1;
+.colone,
+.nav-links,
+.colthree {
   display: flex;
+  flex: 1;
+  justify-content: center;
+}
+
+.colone {
   justify-content: flex-start;
-  font-size: 1.6rem;
-  font-weight: 300;
 }
 
 .nav-links {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
   gap: 3rem;
 }
 

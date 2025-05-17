@@ -6,17 +6,18 @@ import SimpleHeader from '../components/SimpleHeader';
 
 const Login: React.FC = () => {
   return (
-
-    <div className="login-container">
-          <SimpleHeader />
-      <main className="login-main">
-      <h2>Login</h2>
+    <>
+      <header>
+        <SimpleHeader />
+      </header>
+      <main className="cad-log-main">
+        <h2>Login</h2>
         <p className='subtext'>
           Não tem uma conta? <Link to="/cadastro">Crie uma.</Link>
         </p>
         <LoginForm />
       </main>
-    </div>
+    </>
   );
 };
 

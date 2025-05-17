@@ -6,6 +6,7 @@ import About from "../components/LandingPage/About";
 import Services from "../components/LandingPage/Services";
 import Contact from "../components/LandingPage/Contact";
 import { useState, useEffect } from "react";
+import ProfileFooter from "../components/Profile/ProfileFooter";
 
 function LandingPage() {
 
@@ -40,8 +41,8 @@ function LandingPage() {
       <Projects />
       <Services />
       <Contact />
-      </main>
-      
+      <ProfileFooter />
+      </main>    
 
     </div>
   );

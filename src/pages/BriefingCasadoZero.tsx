@@ -85,7 +85,7 @@ const handleKeyDown = React.useCallback((event: KeyboardEvent) => {
   }, [step, answers, handleKeyDown]); // Dependências para reavaliar a função handleKeyDown
 
   return (
-    <div className="container">
+    <>
       <BriefingHeader />
       <div className="centro">
         <div className="progresso">
@@ -105,7 +105,7 @@ const handleKeyDown = React.useCallback((event: KeyboardEvent) => {
           setStep((prev) => Math.min(prev + 1, totalSteps - 1));
         }}
       />
-    </div>
+    </>
   );
 };
 

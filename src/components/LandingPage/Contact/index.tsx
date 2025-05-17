@@ -9,7 +9,7 @@ import { AiFillTikTok } from "react-icons/ai";
 const Contact: React.FC = () => {
   return (
     <section id="contact" className="section contato">
-      <div className='container'>
+      <div className='contact-container'>
         <div className='address'>
           <MdLocationPin className='icon' />
           <p>Avenida Beira Rio, 680 – Graças<br />

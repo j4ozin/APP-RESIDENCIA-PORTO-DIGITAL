@@ -1,7 +1,46 @@
-perfil-page {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
+.container-profile {
+  max-width: 100%;
+  display: flex;
+  gap: 2rem;
+  flex-direction: column;
+  background-color: rgb(246, 247, 251);
+  padding-left: 5rem;
+  padding-right: 5rem;
+}
+
+.editar-perfil,
+.editar-preferencias,
+.editar-projetos,
+.ver-perfil,
+.ver-detalhes,
+.ver-depoimentos,
+.ver-projetos {
+  flex: 1;
+  border-radius: 12px;
+}
+
+.editar-perfil,
+.editar-preferencias,
+.ver-perfil{
+  padding: 1.5rem;
+  background-color: white;
+  box-shadow: 0 3px 4px rgba(0,0,0,0.05);
+}
+
+.editar-perfil,
+.ver-perfil {
+  margin-top: 6rem;
+
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding-top: 90px;
+    gap: 24px;
+  }
+
+  .perfil-page-header {
+    height: 70px;
+    padding: 0 16px;
+  }
 }

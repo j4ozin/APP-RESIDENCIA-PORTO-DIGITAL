@@ -2,9 +2,10 @@ section#contact {
     display: flex;
     padding-left: 10%;
     padding-right: 10%;
+    padding-bottom: 5rem;
 }
 
-.container {
+.contact-container {
     flex: 1;
     padding-right: 1rem;
     display: flex;

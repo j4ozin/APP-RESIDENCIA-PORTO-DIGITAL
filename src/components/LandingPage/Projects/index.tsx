@@ -23,7 +23,7 @@ const projetos = [
 
 const Projects: React.FC = () => {
   return (
-    <section id="projects" className="section projetos">
+    <section id="projects" className="lp-section projetos">
        <div className="projetos-container">
         {projetos.map((projeto) => (
          <div key={projeto.id} className="projeto-card">

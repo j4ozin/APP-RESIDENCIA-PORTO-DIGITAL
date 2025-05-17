@@ -4,7 +4,6 @@ import './styles.css';
 const Cadastro: React.FC = () => {
     return (
         <div className="cadastro-container">
-            <h2 className="titulo">Cadastro</h2>
             <form className="formulario" onSubmit={(e) => e.preventDefault()}>
                 <div className="linha">
                     <div className="campo">

@@ -46,6 +46,13 @@ import corporativos3 from './landingpage/projects/corporativos3.jpg'
 import residenciais1 from './landingpage/projects/residenciais1.jpg'
 import residenciais2 from './landingpage/projects/residenciais2.jpg'
 import residenciais3 from './landingpage/projects/residenciais3.jpg'
+import arquiteto from './profile/arquiteto.png'
+import cliente from './profile/cliente.png'
+import arquiteto_projeto_residencial from './profile/perfil-arquiteto/arquiteto-projeto-residencial.jpg'
+import arquiteto_projeto_interiores from './profile/perfil-arquiteto/arquiteto-projeto-interiores.jpg'
+import arquiteto_projeto_comercial from './profile/perfil-arquiteto/arquiteto-projeto-comercial.jpg'
+import juliana_mota from './profile/perfil-arquiteto/juliana-mota.png'
+import carla_silva from './profile/perfil-arquiteto/carla-silva.png'
 
 
 export const imagens = {
@@ -96,5 +103,12 @@ export const imagens = {
   corporativos3,
   residenciais1,
   residenciais2,
-  residenciais3
+  residenciais3,
+  arquiteto,
+  cliente,
+  arquiteto_projeto_residencial,
+  arquiteto_projeto_interiores,
+  arquiteto_projeto_comercial,
+  juliana_mota,
+  carla_silva
 };
