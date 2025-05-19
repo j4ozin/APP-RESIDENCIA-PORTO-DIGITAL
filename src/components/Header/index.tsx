@@ -1,10 +1,18 @@
 import React from 'react';
 import './styles.css';
+import { Link } from 'react-router-dom';
+import Logo from '../Logo';
 
-const Header: React.FC = ({ activeSection }) => {
+interface HeaderProps {
+  activeSection: string;
+}
+
+const Header: React.FC<HeaderProps> = ({ activeSection }) => {
   return (
-<div className="navbar">
-  <div className="logo">Briffa</div>
+    <header className="navbar">
+  <div className='colone'>
+  <Logo />
+  </div>
   <div className="nav-links">
     <a href="#hero" className={activeSection === "hero" ? "active" : ""}>Home</a>
     <a href="#about" className={activeSection === "about" ? "active" : ""}>Sobre</a>
@@ -12,8 +20,9 @@ const Header: React.FC = ({ activeSection }) => {
     <a href="#services" className={activeSection === "services" ? "active" : ""}>Serviços</a>
     <a href="#contact" className={activeSection === "contact" ? "active" : ""}>Contato</a>
   </div>
-  <div className="colthree"><a href="/login">Login</a></div>
-</div>
+  <div className="colthree"><Link to= {'/login'}>Login</Link></div>
+</header>
+
   );
 };
 

@@ -1,0 +1,32 @@
+.projetos-container {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.projeto-card {
+  max-width: 25rem;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  margin-bottom: 2rem;
+}
+
+.projeto-card .content {
+  text-align: right;
+  background-color: white;
+  text-align: left;
+  border: 1px;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+
+.projeto-card h3 {
+  margin-bottom: 1rem;
+}
+
+.projeto-card p {
+  padding-top: 0.5rem;
+  font-size: 0.9rem;
+}

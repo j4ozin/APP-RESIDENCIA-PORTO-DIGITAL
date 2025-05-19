@@ -1,0 +1,29 @@
+html, body, #root {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.centro {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  overflow: hidden;
+}
+
+.progresso {
+  flex-shrink: 0;
+  position: relative;
+}
+
+.perguntas {
+    z-index: 3;
+  flex: 1;
+  overflow-y: auto;
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 0;
+  box-sizing: border-box;
+}

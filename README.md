@@ -1,54 +1,75 @@
-# React + TypeScript + Vite
+# 🌿 Briffa - Simplificando Briefings de Arquitetura
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Briffa** é uma plataforma intuitiva para arquitetos e clientes organizarem briefings de projetos de forma clara e eficiente. Desenvolvido por **Squad 10** na *Residência Tecnológica* do *Porto Digital* com *Faculdade Senac Pernambuco* e *Bambu/Primeiro Piso*.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Sobre o Projeto
 
-## Expanding the ESLint configuration
+**Problema**: Briefings desalinhados geram informações imprecisas, retrabalhos, custos altos e atrasos.  
+**Solução**: Interface simples para coletar, organizar e interpretar necessidades de clientes, garantindo comunicação clara e projetos assertivos.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## ✨ Funcionalidades
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+- 📝 Cadastro fácil para arquitetos e clientes
+- 📋 Formulários guiados para briefings estruturados
+- 🔍 Visualização e filtros para briefings recebidos
+- 📈 Acompanhamento visual do progresso do projeto
+- ✅ Aprovação final para alinhamento
+- 📱 Design responsivo (mobile, tablet, desktop)
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+---
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+## 🛠️ Tecnologias
+
+- **Frontend**: HTML, CSS, JavaScript, React.js
+- **Prototipagem**: [Figma](https://www.figma.com/design/SEGzbZrd7LI5K7eaCC5Etu/Bambum-Ul-%7C-UX?node-id=0-1&t=wcmylf5kKhokMfDy-1)
+- **Gerenciamento**: [Trello](https://trello.com/invite/b/67f738267719c0858e2fe5a6/ATTiff4da859ff6f0f67e73fedf53fc21cd033F5865A/bambu)
+
+---
+
+## 📋 Backlog Priorizado
+
+1. Cadastro simplificado (Prioridade: 10)
+2. Upload de imagens de referência (10)
+3. Interface de briefing intuitiva (10)
+4. Responsividade total (10)
+5. Gamificação no preenchimento (8)
+
+---
+
+## ⚙️ Como Rodar
+
+1. Clone o repositório:
+   ```bash
+   git clone https://github.com/renatodelgado/APP-RESIDENCIA-PORTO-DIGITAL.git
+   ```
+2. Instale dependências:
+   ```bash
+   npm install
+   ```
+3. Inicie o servidor:
+   ```bash
+   npm start
+   ```
+4. Acesse: `http://localhost:3000`
+
+---
+
+## 📧 Contato
+
+Dúvidas? Fale com a **Squad 10**:  
+- Renato Delgado ([GitHub](https://github.com/renatodelgado))  
+- Diogo, Gabrieta, João, Klaiven, Leonardo, Luis, Rayza, Vinicius
+
+---
+
+## 🎉 Agradecimentos
+
+- *Faculdade Senac Pernambuco*  
+- *Porto Digital*  
+- *Bambu/Primeiro Piso*
+
+**Feito com 💡 e ☕ por Squad 10**
