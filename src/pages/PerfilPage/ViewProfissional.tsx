@@ -12,7 +12,7 @@ const ViewProfissional: React.FC = () => {
   return (
     <>
       <div className="container container-profile">
-        <ProfileHeader profilePic={imagens.arquiteto} />
+        <ProfileHeader profilePic={imagens.arquiteto} tipoUsuario="profissional" />
         <div className="ver-perfil">
           <ProfileViewProfile />
         </div>
