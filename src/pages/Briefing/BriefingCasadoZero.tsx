@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import './BriefingCasadoZero.css';
 
-import BriefingHeader from '../components/Briefing/BriefingHeader';
-import BriefingFooter from '../components/Briefing/BriefingFooter';
-import BriefingProgressBar from '../components/Briefing/BriefingProgressBar';
-import QuestionRenderer from '../components/Questions/QuestionRenderer';
-import { ResumoRespostas } from '../components/Questions/ResumoRespostas/ResumoRespostas';
+import BriefingHeader from '../../components/Briefing/BriefingHeader';
+import BriefingFooter from '../../components/Briefing/BriefingFooter';
+import BriefingProgressBar from '../../components/Briefing/BriefingProgressBar';
+import QuestionRenderer from '../../components/Questions/QuestionRenderer';
+import { ResumoRespostas } from '../../components/Questions/ResumoRespostas/ResumoRespostas';
 
-import { questions } from '../components/Briefing/CasadoZero';
+import { questions } from '../../components/Briefing/CasadoZero';
 
 const BriefingCasadoZero: React.FC = () => {
   interface Answer {

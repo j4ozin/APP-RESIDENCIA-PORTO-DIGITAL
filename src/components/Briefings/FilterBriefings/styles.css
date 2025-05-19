@@ -1,0 +1,96 @@
+.filtros-lista-briefings {
+  margin-top: 2rem;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.filtros-lista-briefings-col1,
+.filtros-lista-briefings-col2 {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex: 1;
+}
+
+.filtros-lista-briefings-col2 {
+  justify-content: flex-end;
+}
+
+.filtros-lista-briefings-busca {
+  flex-grow: 0.5;
+  width: 200px;
+}
+
+.filtros-lista-briefings-busca input,
+.filtros-lista-briefings button,
+.filtros-lista-briefings select {
+  margin: 0;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 14px;
+  height: 36px;
+  box-sizing: border-box;
+}
+
+.filtros-lista-briefings-busca input,
+.filtros-lista-briefings select {
+  border: 1px solid #ccc;
+  width: 100%;
+}
+
+.filtros-lista-briefings button {
+  border: none;
+  cursor: pointer;
+}
+
+.filtros-lista-briefings .todos {
+  background: #f0f0f0;
+  color: #333;
+}
+
+.filtros-lista-briefings .residenciais {
+  background: #e6f5ec;
+  color: #0a8f52;
+}
+
+.filtros-lista-briefings .comerciais {
+  background: #fff1e6;
+  color: #d47b00;
+}
+
+.filtros-lista-briefings .corporativos {
+  background: #e6efff;
+  color: #3366cc;
+}
+
+.filtros-lista-briefings .todos.active {
+  background: #d0d0d0;
+  font-weight: bold;
+}
+.filtros-lista-briefings .residenciais.active {
+  background: #c0e0d0;
+  font-weight: bold;
+}
+.filtros-lista-briefings .comerciais.active {
+  background: #ffdab3;
+  font-weight: bold;
+}
+.filtros-lista-briefings .corporativos.active {
+  background: #b3c7ff;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .filtros-lista-briefings {
+    flex-wrap: wrap;
+  }
+  .filtros-lista-briefings-col1,
+  .filtros-lista-briefings-col2 {
+    flex: 100%;
+    justify-content: center;
+  }
+}
