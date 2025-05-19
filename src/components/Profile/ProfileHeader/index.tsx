@@ -5,11 +5,14 @@ import Logo from '../../Logo';
 import { FaUser, FaPencilAlt } from "react-icons/fa";
 import { ImExit } from "react-icons/im";
 
+
 interface ProfileHeaderProps {
   profilePic: string;
+  tipoUsuario: 'cliente' | 'profissional';
 }
 
-const ProfileHeader: React.FC<ProfileHeaderProps> = ({ profilePic }) => {
+
+const ProfileHeader: React.FC<ProfileHeaderProps> = ({ profilePic, tipoUsuario }) => {
   const [open, setOpen] = useState(false);
   const dropdownRef = useRef(null);
   const navigate = useNavigate();
@@ -47,12 +50,12 @@ const ProfileHeader: React.FC<ProfileHeaderProps> = ({ profilePic }) => {
         {open && (
           <ul className="profile-dropdown-menu">
       <li>
-        <Link to="/perfil/profissional/ver">
+        <Link to={`/perfil/${tipoUsuario}/ver`}>
           <FaUser size="16px" /> Ver Perfil
         </Link>
       </li>
       <li>
-        <Link to="/perfil/profissional/editar">
+        <Link to={`/perfil/${tipoUsuario}/editar`}>
           <FaPencilAlt size="16px" /> Editar Perfil
         </Link>
       </li>

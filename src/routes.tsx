@@ -6,6 +6,8 @@ import { Route, Routes } from 'react-router-dom';
 import EditProfissional from './pages/PerfilPage/EditProfissional';
 import EditCliente from './pages/PerfilPage/EditCliente';
 import ViewProfissional from './pages/PerfilPage/ViewProfissional';
+import ViewCliente from './pages/PerfilPage/ViewCliente';
+
 
 export function Router() {
     return (
@@ -17,6 +19,7 @@ export function Router() {
             <Route path="/perfil/cliente/editar" element={<EditCliente />} />
             <Route path="/perfil/profissional/editar" element={<EditProfissional />} />
             <Route path="/perfil/profissional/ver" element={<ViewProfissional />} />
+            <Route path="/perfil/cliente/ver" element={<ViewCliente />} />
         </Routes>
     )
 }
