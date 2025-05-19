@@ -1,0 +1,49 @@
+.container-lista-briefings {
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(246, 247, 251);
+    padding-left: 5rem;
+    padding-right: 5rem;
+}
+
+.topo-lista-briefings {
+    flex: 1;
+    margin-top: 6rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.topo-lista-briefings-col1 {
+    justify-content: flex-start;
+    display: flex;
+}
+
+.topo-lista-briefings-col2 {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.topo-lista-briefings h1 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #000;
+}
+
+.briefing-personalizado {
+    height: 3rem;
+    background: #0a8f52;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+    top: 1rem;
+    right: 1rem;
+}
+
+.briefing-personalizado:hover {
+    background: #087f48;
+}
