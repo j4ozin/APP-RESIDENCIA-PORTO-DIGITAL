@@ -3,7 +3,7 @@ import Header from "../components/Header";
 import Hero from "../components/LandingPage/Hero";
 import Projects from "../components/LandingPage/Projects";
 import About from "../components/LandingPage/About";
-import Services from "../components/LandingPage/Services";
+import Briefings from "../components/LandingPage/Briefings";
 import Contact from "../components/LandingPage/Contact";
 import { useState, useEffect } from "react";
 import ProfileFooter from "../components/Profile/ProfileFooter";
@@ -39,7 +39,7 @@ function LandingPage() {
       <Hero />
       <About />
       <Projects />
-      <Services />
+      <Briefings />
       <Contact />
       <ProfileFooter />
       </main>    

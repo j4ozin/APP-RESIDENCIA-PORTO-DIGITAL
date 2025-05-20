@@ -24,8 +24,7 @@ const Contact: React.FC = () => {
             <a href="http://tiktok.com/placeholder" target="blank"><AiFillTikTok /></a>
           </div>
         </div>
-        <div className='politics'>
-          <p>© 2025 Politica de privacidade.</p></div>
+        
       </div>
       <div className="form-area">
         <form>

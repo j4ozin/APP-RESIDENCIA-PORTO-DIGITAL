@@ -17,7 +17,7 @@ const Header: React.FC<HeaderProps> = ({ activeSection }) => {
     <a href="#hero" className={activeSection === "hero" ? "active" : ""}>Home</a>
     <a href="#about" className={activeSection === "about" ? "active" : ""}>Sobre</a>
     <a href="#projects" className={activeSection === "projects" ? "active" : ""}>Projetos</a>
-    <a href="#services" className={activeSection === "services" ? "active" : ""}>Serviços</a>
+    <a href="#briefings" className={activeSection === "briefings" ? "active" : ""}>Briefings</a>
     <a href="#contact" className={activeSection === "contact" ? "active" : ""}>Contato</a>
   </div>
   <div className="colthree"><Link to= {'/login'}>Login</Link></div>

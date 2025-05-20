@@ -1,4 +1,4 @@
-.services-cards {
+.briefings-cards {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -6,7 +6,7 @@
     padding-right: 2rem;
 }
 
-.services-card {
+.briefings-card {
     background: linear-gradient(180deg, #ffffff 0%, #dddddd 50%);
     color: black;
     padding: 1rem;
@@ -18,12 +18,12 @@
     overflow: hidden;
 }
 
-.services-card .content {
+.briefings-card .content {
     padding-right: 1.5rem;
     padding-left: 1.5rem;
 }
 
-.services-card .title {
+.briefings-card .title {
     padding-top: 5rem;
     display: flex;
     align-items: center;
@@ -31,17 +31,17 @@
     letter-spacing: .2rem;
 }
 
-.services-card .icon {
+.briefings-card .icon {
     margin-right: 1rem;
     font-size: 30px;
     stroke-width: 1;
 }
 
-.services-card h3 {
+.briefings-card h3 {
     font-weight: lighter;
 }
 
-.services-card ul {
+.briefings-card ul {
     align-items: left;
     display: flex;
     flex-direction: column;
@@ -53,7 +53,7 @@
     padding-top: 2rem;
 }
 
-.services-card:hover {
+.briefings-card:hover {
     transform: translateY(-5px);
 }
 

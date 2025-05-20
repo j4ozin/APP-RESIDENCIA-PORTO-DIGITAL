@@ -16,10 +16,10 @@ const ProfileEditProjects: React.FC = () => {
                 <div className="edit-projects-card">
                     <div className='edit-projects-info'>
                         <div className="edit-projects-info-icon">
-                            <div>
-                                <FaHome className="edit-projects-icon edit-projects-icon-project" />
+                            <div className='edit-projects-info'>
+                                <FaHome className="edit-projects-title" />
                             </div>
-                            <h3>Casa Jardim Paulista</h3>
+                            <div className='edit-projects-title'><h3>Casa do Zero</h3></div>
                         </div>
                         <div className='edit-projects-info-status'>
                             <span className="edit-projects-status status-rascunho">Rascunho</span>
@@ -30,9 +30,10 @@ const ProfileEditProjects: React.FC = () => {
                         <div>Iniciado em 10/05/2024</div>
                         <div> • </div>
                         <FaLocationPin />
-                        <div>São Paulo</div>
+                        <div>Recife</div>
                     </div>
                     <div className="edit-projects-actions">
+                        
                         <button type="button" className="profile-button continue">
                             <FaRegEdit size="16" className="edit-profile-icon" />
                             <div>
@@ -59,7 +60,7 @@ const ProfileEditProjects: React.FC = () => {
                             <div>
                                 <FaBuilding className="edit-projects-icon edit-projects-icon-project" />
                             </div>
-                            <h3>Apartamento Itaim</h3>
+                            <h3>Reforma Total</h3>
                         </div>
                         <div className='edit-projects-info-status'>
                             <span className="edit-projects-status status-approved">Aprovado</span>
@@ -70,7 +71,7 @@ const ProfileEditProjects: React.FC = () => {
                         <div>Iniciado em 23/03/2024</div>
                         <div> • </div>
                         <FaLocationPin />
-                        <div>São Paulo</div>
+                        <div>Jaboatão dos Guararapes</div>
                     </div>
                     <div className="edit-projects-actions">
                         <button type="button" className="profile-button continue">
