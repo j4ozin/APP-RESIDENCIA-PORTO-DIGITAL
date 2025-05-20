@@ -106,3 +106,23 @@
   margin-top: -0.4rem;
   margin-bottom: 0.3rem;
 }
+
+.remember-me-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  white-space: nowrap;
+  line-height: 1;
+}
+
+.remember-me-container label {
+  flex: 1;
+  margin: 0;
+}
+
+.remember-me {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}

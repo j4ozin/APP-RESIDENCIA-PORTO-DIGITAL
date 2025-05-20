@@ -1,7 +1,5 @@
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-
-<<<<<<< Updated upstream
 import React from 'react';
 import Slider from 'react-slick';
 import './styles.css';
@@ -50,8 +48,6 @@ const cardData = [
   }
 ];
 
-=======
->>>>>>> Stashed changes
 const Hero: React.FC = () => {
   
 const settings = {
