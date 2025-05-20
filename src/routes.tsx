@@ -20,6 +20,7 @@ export function Router() {
             <Route path="/perfil/cliente/ver" element={<ViewCliente />} />
             <Route path="/perfil/profissional/editar" element={<EditProfissional />} />
             <Route path="/perfil/profissional/ver" element={<ViewProfissional />} />
+            <Route path="/perfil/cliente/ver" element={<ViewCliente />} />
             <Route path="/briefing" element={<Briefings />} />
         </Routes>
     )
