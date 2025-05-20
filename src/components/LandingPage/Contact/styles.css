@@ -91,7 +91,7 @@ p {
     border: 1px solid #ccc;
     border-radius: 4px;
     resize: vertical;
-    min-height: 200px;
+    min-height: 100px;
     outline: none;
 }
 
