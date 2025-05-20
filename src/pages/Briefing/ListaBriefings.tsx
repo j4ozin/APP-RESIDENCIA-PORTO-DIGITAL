@@ -15,7 +15,7 @@ const Briefings: React.FC = () => {
     return (
         <>
             <div className="container-lista-briefings">
-                <ProfileHeader profilePic={imagens.arquiteto} />
+                <ProfileHeader profilePic={imagens.arquiteto} tipoUsuario={"profissional"} />
                 <div className="topo-lista-briefings">
                     <div className="topo-lista-briefings-col1">
                         <div><h1>Nossos Briefings</h1>
