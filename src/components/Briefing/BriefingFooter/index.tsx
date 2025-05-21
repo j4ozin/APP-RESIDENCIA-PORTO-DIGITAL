@@ -23,7 +23,7 @@ const BriefingFooter: React.FC<BriefingFooterProps> = ({ onBack, onNext, step, t
         </div>
 
         <div className='footer-navButton'>
-          <button>continuar mais tarde</button>
+          <button>salvar como rascunho</button>
         </div>
 
         <div className='footer-navButton'>
