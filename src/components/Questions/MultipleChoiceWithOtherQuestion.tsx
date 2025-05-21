@@ -54,7 +54,7 @@ useEffect(() => {
             className={`choice-button ${selected === opt ? 'selected' : ''}`}
             onClick={() => handleSelect(opt)}
           >
-            {icon[index] && <div className="icon">{icon[index]}</div>}
+            {icon[index] && <div className="icon-question">{icon[index]}</div>}
             <div>{opt}</div>
           </button>
         ))}

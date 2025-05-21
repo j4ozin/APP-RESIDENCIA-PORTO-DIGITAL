@@ -17,7 +17,7 @@ export default function MultipleChoiceQuestion({ questionText, options, answer, 
             className={`choice-button ${answer === opt ? 'selected' : ''}`}
             onClick={() => onChange(opt)}
           >
-            <div className="icon">{icon[index]}</div>
+            <div className="icon-question">{icon[index]}</div>
             <div>{opt}</div>
           </button>
         ))}

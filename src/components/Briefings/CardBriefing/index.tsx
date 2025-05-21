@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { FaClock, FaStar } from "react-icons/fa";
 import { GoListOrdered } from "react-icons/go";
 
+
 export const BriefingCard: React.FC<{ briefing: BriefingData }> = ({
   briefing,
 }) => {

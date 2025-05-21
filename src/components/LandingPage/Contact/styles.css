@@ -29,8 +29,7 @@ section#contact {
 }
 
 .address {
-
-    font-weight: lighter;
+    font-weight: 300;
     font-style: normal;
 }
 
@@ -64,9 +63,9 @@ p {
     border: 1px solid #ccc;
     border-radius: 4px;
     outline: none;
-  }
+}
 
-  .form-group label {
+.form-group label {
     position: absolute;
     top: 1.2rem;
     left: 0.5rem;
@@ -74,15 +73,15 @@ p {
     font-size: 1rem;
     pointer-events: none;
     transition: 0.2s ease all;
-  }
-  
-  .form-group input:focus + label,
-  .form-group input:not(:placeholder-shown) + label {
+}
+
+.form-group input:focus+label,
+.form-group input:not(:placeholder-shown)+label {
     top: 0.3rem;
     left: 0.5rem;
     font-size: 0.75rem;
     color: #333;
-  }
+}
 
 .form-group textarea {
     width: 100%;
@@ -91,7 +90,7 @@ p {
     border: 1px solid #ccc;
     border-radius: 4px;
     resize: vertical;
-    min-height: 200px;
+    min-height: 100px;
     outline: none;
 }
 
@@ -123,8 +122,8 @@ button {
     font-size: 1rem;
     cursor: pointer;
     transition: background-color 0.3s;
-  }
-  
-  button:hover {
+}
+
+button:hover {
     background-color: #797979;
-  }
+}

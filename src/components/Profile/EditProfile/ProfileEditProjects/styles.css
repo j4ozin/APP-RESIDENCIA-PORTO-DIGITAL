@@ -40,14 +40,24 @@
     align-items: center;
 }
 
-.edit-projects-info-icon {
+.edit-projects-info-icon-project {
     display: flex;
+    flex: 1;
     align-items: center;
     gap: 10px;
 }
 
 .edit-projects-info-icon {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     color: #6b7280;
+    gap: 0.4rem;
+}
+
+.edit-projects-title {
+    display: flex;
+    flex: 1;
 }
 
 .edit-projects-info-icon h3 {

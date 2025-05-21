@@ -39,7 +39,7 @@ const ProfileHeader: React.FC<ProfileHeaderProps> = ({ profilePic, tipoUsuario }
         <Logo />
       </div>
       <div className="profile-center-col">
-        <Link to="">Briefings</Link>
+        <Link to="/briefing">Briefings</Link>
         <Link to="">Projetos</Link>
         <Link to="">Ajuda</Link>
       </div>

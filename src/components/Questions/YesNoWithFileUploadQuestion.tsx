@@ -57,14 +57,14 @@ const handleDetailChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
           className={`choice-button ${selected === 'Sim' ? 'selected' : ''}`}
           onClick={() => handleSelect('Sim')}
         >
-          <div className="icon"><BiSolidLike /></div>
+          <div className="icon-question"><BiSolidLike /></div>
           <div>Sim</div>
         </button>
         <button
           className={`choice-button ${selected === 'Não' ? 'selected' : ''}`}
           onClick={() => handleSelect('Não')}
         >
-          <div className="icon"><BiSolidDislike /></div>
+          <div className="icon-question"><BiSolidDislike /></div>
           <div>Não</div>
         </button>
       </div>

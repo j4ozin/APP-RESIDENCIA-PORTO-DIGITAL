@@ -1,5 +1,6 @@
 
 export interface BriefingData {
+  tipo: string;
   id: number;
   categoria: "Residencial" | "Comercial" | "Corporativo";
   titulo: string;
@@ -19,12 +20,13 @@ export const briefings: BriefingData[] = [
     categoria: "Residencial",
     titulo: "Casa do Zero",
     descricao: "Este briefing é ideal para clientes que desejam construir uma casa completamente nova, partindo do zero. Ele abrange todas as etapas do projeto, desde a definição do terreno até os acabamentos e preferências estéticas. É indicado para arquitetos que precisam compreender profundamente o estilo de vida e os desejos do cliente para oferecer soluções personalizadas e completas.",
-    tempo: "15–20min",
+    tempo: "20–40min",
     nivel: "Avançado",
-    perguntas: 20,
-    tags: ["Popular"],
+    perguntas: 50,
+    tags: ["Destaque", "Popular"],
     dataCriacao: "2025-05-10",
     link: "/briefing/casadozero/",
+    tipo: "destaque"
   },
   {
     id: 2,
@@ -36,7 +38,8 @@ export const briefings: BriefingData[] = [
     perguntas: 14,
     tags: ["Novo"],
     dataCriacao: "2025-05-15",
-    link: "/"
+    link: "/",
+    tipo: ""
   },
   {
     id: 3,
@@ -48,7 +51,8 @@ export const briefings: BriefingData[] = [
     perguntas: 12,
     tags: ["Popular"],
     dataCriacao: "2025-05-12",
-    link: "/"
+    link: "/",
+    tipo: ""
   },
   {
     id: 4,
@@ -59,7 +63,8 @@ export const briefings: BriefingData[] = [
     nivel: "Iniciante",
     perguntas: 10,
     dataCriacao: "2025-05-14",
-    link: "/"
+    link: "/",
+    tipo: ""
   },
   {
     id: 5,
@@ -71,7 +76,8 @@ export const briefings: BriefingData[] = [
     perguntas: 8,
     tags: ["Novo"],
     dataCriacao: "2025-05-16",
-    link: "/"
+    link: "/",
+    tipo: ""
   },
 
   // Comerciais
@@ -84,7 +90,8 @@ export const briefings: BriefingData[] = [
     nivel: "Médio",
     perguntas: 13,
     dataCriacao: "2025-05-11",
-    link: "/"
+    link: "/",
+    tipo: ""
   },
   {
     id: 7,
@@ -96,7 +103,8 @@ export const briefings: BriefingData[] = [
     perguntas: 15,
     tags: ["Popular"],
     dataCriacao: "2025-05-13",
-    link: "/"
+    link: "/",
+    tipo: ""
   },
   {
     id: 8,
@@ -107,7 +115,8 @@ export const briefings: BriefingData[] = [
     nivel: "Avançado",
     perguntas: 18,
     dataCriacao: "2025-05-09",
-    link: "/"
+    link: "/",
+    tipo: ""
   },
   {
     id: 9,
@@ -119,7 +128,8 @@ export const briefings: BriefingData[] = [
     perguntas: 11,
     tags: ["Novo"],
     dataCriacao: "2025-05-17",
-    link: "/"
+    link: "/",
+    tipo: ""
   },
   {
     id: 10,
@@ -130,7 +140,8 @@ export const briefings: BriefingData[] = [
     nivel: "Médio",
     perguntas: 14,
     dataCriacao: "2025-05-08",
-    link: "/"
+    link: "/",
+    tipo: ""
   },
 
   // Corporativos
@@ -144,7 +155,8 @@ export const briefings: BriefingData[] = [
     perguntas: 22,
     tags: ["Popular"],
     dataCriacao: "2025-05-07",
-    link: "/"
+    link: "/",
+    tipo: ""
   },
   {
     id: 12,
@@ -155,7 +167,8 @@ export const briefings: BriefingData[] = [
     nivel: "Médio",
     perguntas: 12,
     dataCriacao: "2025-05-18",
-    link: "/"
+    link: "/",
+    tipo: ""
   },
   {
     id: 13,
@@ -167,7 +180,8 @@ export const briefings: BriefingData[] = [
     perguntas: 15,
     tags: ["Novo"],
     dataCriacao: "2025-05-06",
-    link: "/"
+    link: "/",
+    tipo: ""
   },
   {
     id: 14,
@@ -178,7 +192,8 @@ export const briefings: BriefingData[] = [
     nivel: "Iniciante",
     perguntas: 10,
     dataCriacao: "2025-05-05",
-    link: "/"
+    link: "/",
+    tipo: ""
   },
   {
     id: 15,
@@ -190,6 +205,7 @@ export const briefings: BriefingData[] = [
     perguntas: 25,
     tags: ["Popular"],
     dataCriacao: "2025-05-04",
-    link: "/"
+    link: "/",
+    tipo: ""
   },
 ];

@@ -1,27 +1,18 @@
-.status {
-  margin: 0.5rem;
-  z-index: 2;
-  position: relative;
-  left: 0;
-  right: 0;
+.progressContainer {
   width: 80vw;
-  margin: 0 auto;
+  max-width: 700px;
+  margin: 1rem auto;
   display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
+  flex-direction: column;
   gap: 1rem;
-  padding-top: 1.2rem;
-  flex-shrink: 0;
 }
 
-
-.status-left {
+.progressHeader {
+  position: relative;
   display: flex;
-  flex-direction: row;
   align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-
+  justify-content: flex-start;
+  height: 28px;
 }
 
 .stepCircle {
@@ -35,71 +26,50 @@
   align-items: center;
   justify-content: center;
   font-size: 14px;
+  z-index: 2;
 }
 
 .stepText {
-  font-size: 14px;
-  color: #333;
-}
-
-.progressBar {
-  display: flex;
-  flex: 1;
-  justify-content: space-between;
-  align-items: center;
-  position: relative;
-  width: 80vw;
-  max-width: 100%;
-  padding: 1rem 0;
-}
-
-.progressBar::before {
-  content: '';
   position: absolute;
-  top: 50%;
-  left: 0;
-  right: 0;
-  height: 2px;
-  border-top: 1px dotted #ccc;
-  transform: translateY(-50%);
-  z-index: 0;
-}
-
-.circle {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background-color: #ccc;
-  position: relative;
-  z-index: 1;
-  transition: background-color 0.3s;
-}
-
-
-.circle.active {
-  background-color: #000;
-}
-
-.tooltip {
-  position: absolute;
-  top: -30px;
   left: 50%;
   transform: translateX(-50%);
-  background-color: #000;
+  font-weight: 700;
+  font-size: 16px;
   color: white;
-  padding: 4px 8px;
-  font-size: 12px;
-  border-radius: 6px;
+  background: linear-gradient(135deg, #d4af37, #c4a962);
+  padding: 4px 12px;
+  border-radius: 20px;
+  box-shadow: 0 0 8px rgba(196, 169, 98, 0.8);
   white-space: nowrap;
+
+  animation: pulse 2.5s infinite ease-in-out;
 }
 
-.tooltip::after {
-  content: "";
-  position: absolute;
-  bottom: -6px;
-  left: 50%;
-  transform: translateX(-50%);
-  border-width: 6px 6px 0 6px;
-  border-style: solid;
-  border-color: #000 transparent transparent transparent
+/* Animação de pulso suave */
+@keyframes pulse {
+  0%, 100% {
+    box-shadow: 0 0 8px rgba(196, 169, 98, 0.8);
+    transform: translateX(-50%) scale(1);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(196, 169, 98, 1);
+    transform: translateX(-50%) scale(1.05);
+  }
 }
+
+
+.progressBarWrapper {
+  position: relative;
+  height: 20px;
+  background-color: #eee;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.progressFill {
+  background: linear-gradient(90deg, #c4a962, #9c7c38);
+  height: 100%;
+  border-radius: 999px;
+  transition: width 0.5s ease;
+}
+
