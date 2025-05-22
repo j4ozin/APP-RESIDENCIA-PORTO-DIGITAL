@@ -4,6 +4,7 @@ import ProfileHeader from '../../components/Profile/ProfileHeader';
 import { imagens } from '../../assets/imagens';
 import ProfileViewProfile from '../../components/Profile/ViewProfile/ProfileViewProfile/ClienteViewProfile';
 import ProfileViewDetails from '../../components/Profile/ViewProfile/ProfileViewDetails/viewDetailCliente';
+import ClienteViewTestimonials from '../../components/Profile/ViewProfile/ProfileViewTestimonials/clienteViewTestimonials';
 import ProfileEditProjects from '../../components/Profile/EditProfile/ProfileEditProjects';
 import ProfileFooter from '../../components/Profile/ProfileFooter';
 
@@ -21,6 +22,10 @@ const ViewCliente: React.FC = () => {
 
         <div className="editar-projetos">
           <ProfileEditProjects />
+        </div>
+
+        <div className='ver-depoimentos'>
+          <ClienteViewTestimonials />
         </div>
 
         <div className="profile-footer">

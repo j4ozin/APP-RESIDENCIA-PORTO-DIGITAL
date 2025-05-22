@@ -43,6 +43,10 @@
     flex-wrap: wrap;
   }
 
+  #nome {
+    width: 410px;    
+  }
+
   .campo {
     flex: 1;
     display: flex;
@@ -107,3 +111,8 @@
     color: white;
     border-color: #c4a962;
   }
+
+  /* .input-cep {
+  width: 120px;  
+} */
+
