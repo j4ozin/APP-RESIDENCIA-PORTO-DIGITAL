@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { imagens } from '../../assets/imagens';
+import { SaveButton } from '../../components/Profile/EditProfile/SaveButton';
 import ProfileEditDetails from '../../components/Profile/EditProfile/ProfileEditDetails';
 import ProfileEditPreferences from '../../components/Profile/EditProfile/ProfileEditPreferences';
 import ProfileEditProfile from '../../components/Profile/EditProfile/ProfileEditProfile';
 import ProfileEditProjects from '../../components/Profile/EditProfile/ProfileEditProjects';
-import { SaveButton } from '../../components/Profile/EditProfile/SaveButton';
 import useProfileData from '../../components/Profile/EditProfile/useProfileData';
 import ProfileFooter from '../../components/Profile/ProfileFooter';
 import ProfileHeader from '../../components/Profile/ProfileHeader';

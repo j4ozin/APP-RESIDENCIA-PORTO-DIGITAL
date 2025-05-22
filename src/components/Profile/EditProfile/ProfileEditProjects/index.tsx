@@ -10,7 +10,7 @@ const ProfileEditProjects: React.FC = () => {
         <>
             <div className="edit-projects-header">
                 <HiMiniSquare3Stack3D className="edit-projects-icon" />
-                <h3>Meus Projetos</h3>
+                <h3>Últimos Projetos</h3>
             </div>
             <div className="edit-projects-grid">
                 <div className="edit-projects-card">
