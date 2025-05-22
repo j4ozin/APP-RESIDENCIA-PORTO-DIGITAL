@@ -17,6 +17,9 @@ export interface ClienteData {
   estado: string;
   descricao: string;
   interesses: string[];
+  estilos: string[];
+  projetosFinalizados: string[];
+  hobbies: string[];
 }
 
 export function useClienteData() {
@@ -31,10 +34,16 @@ export function useClienteData() {
           headers: { 'X-Master-Key': MASTER_KEY }
         });
         const json = await res.json();
-        const cliente = json.record.clientes[0];
+        const cliente = json.record.usuarios[0];
 
         if (cliente) {
-          setData(cliente);
+          setData({
+            ...cliente,
+            interesses: cliente.interesses || [],
+            estilos: cliente.estilos || [],
+            projetosFinalizados: cliente.projetosFinalizados || [],
+            hobbies: cliente.hobbies || []
+          });
         } else {
           setData({
             nome: '',
@@ -49,7 +58,10 @@ export function useClienteData() {
             cidade: '',
             estado: '',
             descricao: '',
-            interesses: []
+            interesses: [],
+            estilos: [],
+            projetosFinalizados: [],
+            hobbies: []
           });
         }
       } catch (err) {
@@ -71,8 +83,8 @@ export function useClienteData() {
       const json = await res.json();
       const fullContent = json.record;
 
-      fullContent.clientes[0] = {
-        ...fullContent.clientes[0],
+      fullContent.usuarios[0] = {
+        ...fullContent.usuarios[0],
         ...novosDados
       };
 

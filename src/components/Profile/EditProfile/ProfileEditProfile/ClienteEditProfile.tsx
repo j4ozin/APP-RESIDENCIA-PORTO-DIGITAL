@@ -1,6 +1,6 @@
 import React from 'react';
 import { imagens } from '../../../../assets/imagens';
-import { FaRegEdit } from "react-icons/fa";
+import { FaRegEdit } from 'react-icons/fa';
 import { ClienteData } from '../useClienteData';
 
 interface ClienteEditProfileProps {
@@ -14,13 +14,13 @@ interface ClienteEditProfileProps {
 const ClienteEditProfile: React.FC<ClienteEditProfileProps> = ({
   cliente,
   setCliente,
-  salvarDados
+  salvarDados,
 }) => {
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
   ) => {
     const { name, value } = e.target;
-    setCliente(prev => prev ? { ...prev, [name]: value } : prev);
+    setCliente((prev) => (prev ? { ...prev, [name]: value } : prev));
   };
 
   const handleSave = (e: React.FormEvent) => {
@@ -42,8 +42,10 @@ const ClienteEditProfile: React.FC<ClienteEditProfileProps> = ({
               alt="Perfil Cliente"
               className="edit-profile-image"
             />
-            <div className='edit-img-text'>
-              <div><FaRegEdit size={20} className="edit-profile-icon" /></div>
+            <div className="edit-img-text">
+              <div>
+                <FaRegEdit size={20} className="edit-profile-icon" />
+              </div>
               <div>Editar Foto</div>
             </div>
           </div>
@@ -59,7 +61,12 @@ const ClienteEditProfile: React.FC<ClienteEditProfileProps> = ({
 
               <div className="profile-form-group">
                 <label>E-mail</label>
-                <input name="email" value={cliente.email} disabled className="disabled" />
+                <input
+                  name="email"
+                  value={cliente.email}
+                  disabled
+                  className="disabled"
+                />
               </div>
 
               <div className="profile-form-group">
@@ -74,7 +81,11 @@ const ClienteEditProfile: React.FC<ClienteEditProfileProps> = ({
 
               <div className="profile-form-group">
                 <label>Logradouro</label>
-                <input name="logradouro" value={cliente.logradouro} onChange={handleChange} />
+                <input
+                  name="logradouro"
+                  value={cliente.logradouro}
+                  onChange={handleChange}
+                />
               </div>
 
               <div className="profile-form-group">
@@ -106,7 +117,12 @@ const ClienteEditProfile: React.FC<ClienteEditProfileProps> = ({
 
               <div className="profile-form-group">
                 <label>Descrição</label>
-                <textarea name="descricao" value={cliente.descricao} onChange={handleChange} rows={3} />
+                <textarea
+                  name="descricao"
+                  value={cliente.descricao}
+                  onChange={handleChange}
+                  rows={4}
+                />
               </div>
             </div>
           </form>
