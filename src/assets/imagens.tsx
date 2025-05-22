@@ -53,7 +53,13 @@ import arquiteto_projeto_interiores from './profile/perfil-arquiteto/arquiteto-p
 import arquiteto_projeto_comercial from './profile/perfil-arquiteto/arquiteto-projeto-comercial.jpg'
 import juliana_mota from './profile/perfil-arquiteto/juliana-mota.png'
 import carla_silva from './profile/perfil-arquiteto/carla-silva.png'
-
+import projeto1 from './projects/projeto1.jpg'
+import projeto2 from './projects/projeto2.jpg'
+import projeto3 from './projects/projeto3.jpg'
+import projeto4 from './projects/projeto4.jpg'
+import projeto5 from './projects/projeto5.jpg'
+import projeto6 from './projects/projeto6.jpg'
+import projeto7 from './projects/projeto7.jpg'
 
 export const imagens = {
   telhadoplatibanda,
@@ -110,5 +116,12 @@ export const imagens = {
   arquiteto_projeto_interiores,
   arquiteto_projeto_comercial,
   juliana_mota,
-  carla_silva
+  carla_silva,
+  projeto1,
+  projeto2,
+  projeto3,
+  projeto4,
+  projeto5,
+  projeto6,
+  projeto7
 };

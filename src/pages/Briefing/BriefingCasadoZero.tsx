@@ -7,7 +7,7 @@ import BriefingProgressBar from '../../components/Briefing/BriefingProgressBar';
 import QuestionRenderer from '../../components/Questions/QuestionRenderer';
 import { ResumoRespostas } from '../../components/Questions/ResumoRespostas/ResumoRespostas';
 
-import { questions } from '../../components/Briefing/CasadoZero';
+import { questions } from '../../data/CasadoZero';
 
 const BriefingCasadoZero: React.FC = () => {
   interface Answer {
