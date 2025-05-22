@@ -8,6 +8,7 @@ import EditCliente from './pages/PerfilPage/EditCliente';
 import ViewProfissional from './pages/PerfilPage/ViewProfissional';
 import ViewCliente from './pages/PerfilPage/ViewCliente';
 import Briefings from './pages/Briefing/ListaBriefings';
+import ProjectsPage from './pages/ProjectsPage';
 
 export function Router() {
     return (
@@ -22,6 +23,7 @@ export function Router() {
             <Route path="/perfil/profissional/ver" element={<ViewProfissional />} />
             <Route path="/perfil/cliente/ver" element={<ViewCliente />} />
             <Route path="/briefing" element={<Briefings />} />
+            <Route path="/projetos" element={<ProjectsPage />} />
         </Routes>
     )
 }
