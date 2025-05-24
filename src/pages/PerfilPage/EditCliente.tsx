@@ -40,6 +40,7 @@ const EditCliente: React.FC = () => {
     try {
       setCliente(cleanedData);
       await salvarDados(cleanedData);
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     } catch (err) {
       setError('Erro ao salvar os dados. Tente novamente.');
     }
