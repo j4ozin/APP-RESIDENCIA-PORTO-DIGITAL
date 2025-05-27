@@ -9,7 +9,7 @@
 .view-profile-pic-container {
   display: flex;
   justify-content: center;
-  width: 30%;
+  width: fit-content;
 }
 
 .view-profile-pic {
@@ -142,3 +142,35 @@
   color: #4b5563;
   margin: 5px 0;
 }
+
+@media (max-width: 768px) {
+  .view-profile-header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .view-profile-pic-container {
+    margin-bottom: 1rem;
+  }
+
+  .view-profile-pic {
+    margin-right: 0;
+  }
+
+  .view-profile-contact {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .view-profile-contact-link {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .project-grid, .testimonial-grid {
+    grid-template-columns: 1fr;
+  }
+}
+

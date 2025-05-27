@@ -1,66 +1,88 @@
 .projects-icon-section {
-    display: flex;
-    gap: 1rem;
-    flex-direction: row;
-    align-items: center;
-    color: black;
-    margin-bottom: 1rem;
+  display: flex;
+  gap: 1rem;
+  flex-direction: row;
+  align-items: center;
+  color: black;
+  margin-bottom: 1rem;
+  flex-wrap: wrap; /* Ajuda em telas menores */
+  justify-content: center; /* Centraliza quando quebra linha */
+  text-align: center;
 }
 
 .projects-icon {
-    color: #c4a962; 
-    font-size: 1.7rem;
+  color: #c4a962;
+  font-size: 1.7rem;
 }
 
 .project-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-    border-radius: 10px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* reduzido de 300px para melhor adaptação no mobile */
+  gap: 20px;
+  border-radius: 10px;
+  width: 100%;
+}
+
+/* Responsividade extra em telas bem pequenas */
+@media (max-width: 480px) {
+  .projects-icon {
+    font-size: 1.5rem;
+  }
+
+  .projects-card h3 {
+    font-size: 14px;
+  }
+
+  .projects-card p {
+    font-size: 13px;
+    line-clamp: inherit;
+    -webkit-line-clamp: 4;
+    line-clamp: 4;
+  }
 }
 
 .projects-card {
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    border: 1px solid #e5e7eb;
-    height: 20rem;
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-    position: relative;
-    width: 100%;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e5e7eb;
+  height: 20rem;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
 }
 
 .projects-card img {
-    width: 100%;
-    height: 50%;
-    object-fit: cover;
-    display: block;
+  width: 100%;
+  height: 50%;
+  object-fit: cover;
+  display: block;
 }
 
 .projects-card-content {
-    padding: 1rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 100%;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
 }
 
 .projects-card h3 {
-    margin: 0.5rem 0;
-    font-size: 16px;
-    flex-shrink: 0;
+  margin: 0.5rem 0;
+  font-size: 16px;
+  flex-shrink: 0;
 }
 
 .projects-card p {
-    margin: 0 0 10px;
-    color: #6b7280;
-    flex-grow: 1;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    line-clamp: 3;
-    -webkit-box-orient: vertical;
+  margin: 0 0 10px;
+  color: #6b7280;
+  flex-grow: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
 }

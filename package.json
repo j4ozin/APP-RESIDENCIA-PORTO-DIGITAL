@@ -10,11 +10,13 @@
     "preview": "vite preview"
   },
   "dependencies": {
-
     "-": "^0.0.1",
+    "@react-pdf/renderer": "^4.3.0",
     "g": "^2.0.1",
+    "html2canvas": "^1.4.1",
+    "html2pdf.js": "^0.10.3",
+    "jspdf": "^3.0.1",
     "npm": "^11.3.0",
-  
     "phosphor-react": "^1.4.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",

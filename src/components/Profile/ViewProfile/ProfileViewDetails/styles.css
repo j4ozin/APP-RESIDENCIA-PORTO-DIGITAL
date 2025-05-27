@@ -9,7 +9,7 @@
 
 .profile-section {
     width: 33.33%;
-    height: flex;
+    height: auto;
     background: #fff;
     padding: 20px;
     border-radius: 10px;
@@ -73,4 +73,29 @@
     font-weight: bold;
     color: #c4a962;
     margin-top: 0.5rem;
+}
+
+@media (max-width: 1024px) {
+  .profile-view-details {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .profile-section {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .profile-section ul {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .profile-section ul li {
+    font-size: 0.85rem;
+    padding: 6px 12px;
+    text-align: center;
+  }
 }

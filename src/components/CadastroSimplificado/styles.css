@@ -1,0 +1,74 @@
+.cadastroSimplificado-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  width: 100%;
+}
+
+.formSimplificado-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem; /* mais compacto */
+  width: 100%;
+  max-width: 500px;
+}
+
+.inputGroupSimplificado {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+
+.inputGroupSimplificado label {
+  font-size: 13px;
+  color: #333;
+  font-weight: 500;
+}
+
+.inputGroupSimplificado input {
+  width: 100%;
+  padding: 5px; /* menor padding */
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 12px; /* mais compacto */
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+}
+
+.inputGroupSimplificado input:focus {
+  border-color: #2e7d32;
+  outline: none;
+}
+
+.inputGroupRowSimplificado {
+  display: flex;
+  gap: 6px; /* reduz espaço entre campos lado a lado */
+}
+
+.halfWidthSimplificado {
+  flex: 1;
+  min-width: 0;
+}
+
+.buttonAreaSimplificado {
+  display: flex;
+  justify-content: center;
+  margin-top: 5px;
+}
+
+button[type="submit"] {
+  background-color: #2e7d32;
+  color: #fff;
+  border: none;
+  padding: 6px 15px;
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #3d9a42;
+}

@@ -4,14 +4,19 @@ import ProfileHeader from "../../components/Profile/ProfileHeader";
 import ProfileFooter from "../../components/Profile/ProfileFooter";
 import "./styles.css";
 import ProjectCard from "../../components/Projects/ProjectCard";
-import { projects } from "../../data/projects";
+import { projectsProfissional } from "../../data/projectsProfissional";
+import { projectsCliente } from "../../data/projectsCliente";
+import { useLocation } from "react-router-dom";
 
 const ProjectsPage: React.FC = () => {
+    const location = useLocation();
+    const tipoUsuario = location.state?.tipoUsuario ?? "profissional";
     const [statusSelecionado, setStatusSelecionado] = useState("Todos");
     const [categoriaSelecionada, setCategoriaSelecionada] = useState("Categoria");
     const [tipoServicoSelecionado, setTipoServicoSelecionado] = useState("Tipo de serviço");
     const [localizacaoSelecionada, setLocalizacaoSelecionada] = useState("Localização");
     const [anoSelecionado, setAnoSelecionado] = useState("Ano de execução");
+    const projects = tipoUsuario === "cliente" ? projectsCliente : projectsProfissional;
 
     const statusOptions = ["Todos", "Em andamento", "Concluído", "Arquivado"];
 
@@ -45,7 +50,7 @@ const ProjectsPage: React.FC = () => {
     return (
         <>
         <div className="container-lista-projetos">
-            <ProfileHeader profilePic={imagens.arquiteto} tipoUsuario="profissional" />
+            <ProfileHeader profilePic={tipoUsuario === "cliente" ? imagens.cliente : imagens.arquiteto} tipoUsuario={tipoUsuario} />
             <div className="topo-lista-projetos">
                 <div className="topo-lista-projetos-col1">
                     <div>

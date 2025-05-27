@@ -5,6 +5,8 @@
 .hero-background {
   width: 100%;
   height: auto;
+  max-height: 90vh;
+  object-fit: cover;
 }
 
 .hero-overlay {
@@ -23,16 +25,15 @@
 }
 
 .hero-overlay h1 {
-  font-size: 3rem;
-  font-weight: 500;
   color: white;
+  font-weight: 500;
+  font-size: clamp(1.5rem, 5vw, 3rem);
 }
 
 .hero-overlay p {
-  font-size: 1.2rem;
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
   color: white;
 }
-
 .carousel-wrapper {
   padding: 2rem;
 }
@@ -86,6 +87,7 @@
   margin: 0;
   font-size: 1.1rem;
   display: -webkit-box;
+  line-clamp: inherit;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
@@ -96,6 +98,7 @@
   padding-top: 0.5rem;
   font-size: 0.9rem;
   display: -webkit-box;
+  line-clamp: inherit;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;

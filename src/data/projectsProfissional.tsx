@@ -1,6 +1,6 @@
 import { imagens } from "../assets/imagens";
 
-export const projects = [
+export const projectsProfissional = [
   {
     id: "001",
     titulo: "Casa Minimalista",
@@ -9,6 +9,7 @@ export const projects = [
     categoria: "Residencial",
     tipoServico: "Reforma",
     dataInicio: "01/02/2024",
+    dataFim: null,
     tempoEstimado: "7 meses",
     autor: "Juliana Souza",
     tags: ["Minimalista", "Residencial", "Concreto"],
@@ -53,6 +54,7 @@ export const projects = [
     categoria: "Residencial",
     tipoServico: "Projeto Arquitetônico",
     dataInicio: "01/05/2024",
+    dataFim: null,
     tempoEstimado: "6 meses",
     autor: "Fernanda Monteiro",
     tags: ["Aconchegante", "Madeira", "Residencial"],
@@ -82,6 +84,7 @@ export const projects = [
     categoria: "Corporativo",
     tipoServico: "Projeto Arquitetônico",
     dataInicio: "20/03/2024",
+    dataFim: null,
     tempoEstimado: "9 meses",
     autor: "TechPlace",
     tags: ["Tecnologia", "Coworking", "Corporativo"],

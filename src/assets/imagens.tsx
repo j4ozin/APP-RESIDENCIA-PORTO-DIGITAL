@@ -60,6 +60,9 @@ import projeto4 from './projects/projeto4.jpg'
 import projeto5 from './projects/projeto5.jpg'
 import projeto6 from './projects/projeto6.jpg'
 import projeto7 from './projects/projeto7.jpg'
+import projeto8 from './projects/projeto8.jpg'
+import projeto9 from './projects/projeto9.jpg'
+import projeto10 from './projects/projeto10.jpg'
 
 export const imagens = {
   telhadoplatibanda,
@@ -123,5 +126,8 @@ export const imagens = {
   projeto4,
   projeto5,
   projeto6,
-  projeto7
+  projeto7,
+  projeto8,
+  projeto9,
+  projeto10
 };

@@ -5,6 +5,10 @@
     align-items: center;
     color: black;
     margin-bottom: 1rem;
+    flex-wrap: wrap;
+    justify-content: left;
+    text-align: center;
+
 }
 
 .testimonial-icon {
@@ -15,6 +19,7 @@
 .testimonial-container {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     gap: 2rem;
     border-radius: 10px;
 }
@@ -26,6 +31,7 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     border: 1px solid #e5e7eb;
     display: flex;
+    flex: 1 1 300px;
     flex-direction: column;
     overflow: hidden;
     position: relative;
