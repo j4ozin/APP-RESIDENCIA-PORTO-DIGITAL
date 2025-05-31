@@ -63,7 +63,8 @@
 Dúvidas? Fale com a **Squad 10**:  
 - Renato Delgado ([GitHub](https://github.com/renatodelgado))  
 - João Basante ([GitHub](https://github.com/j4ozin))
-- Diogo, Gabrieta, Klaiven, Leonardo, Luis, Rayza, Vinicius
+- Klaiven Castro ([GitHub](https://github.com/klaiven))
+- Diogo, Gabriela, Leonardo, Luis, Rayza, Vinicius
 
 ---
 

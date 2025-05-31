@@ -33,8 +33,8 @@ export const BriefingList: React.FC<BriefingListProps> = ({ briefings }) => {
         columnClassName="my-masonry-grid_column"
       >
         {outrosBriefings.length > 0 ? (
-          outrosBriefings.map((briefing) => (
-            <BriefingCard key={briefing.id} briefing={briefing} />
+          outrosBriefings.map((briefing, index) => (
+            <BriefingCard key={briefing.id} briefing={briefing} index={index} />
           ))
         ) : (
           <p>Nenhum briefing encontrado.</p>

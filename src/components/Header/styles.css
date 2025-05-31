@@ -1,33 +1,82 @@
 .navbar {
   font-family: 'Poppins', sans-serif;
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
   display: flex;
   align-items: center;
-  position: fixed;
+  justify-content: space-between; /* para alinhar logo e nav nos cantos */
+  padding: 1rem 2rem;
+  z-index: 1000;
+  height: 80px;
 }
 
-.colone,
-.nav-links,
-.colthree {
-  display: flex;
-  flex: 1;
-  justify-content: center;
-}
+
 
 .colone {
-  justify-content: flex-start;
+  display: flex;
+  align-items: center;
 }
 
+/* Menu hamburguer botão */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 25px;
+  height: 20px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1100; /* sobrepor o nav */
+}
+
+.menu-toggle:focus {
+  outline: none;
+}
+
+.bar {
+  height: 3px;
+  width: 100%;
+  background-color: #333;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+
+/* Animação do ícone para quando aberto */
+.bar.open:nth-child(1) {
+  transform: rotate(45deg) translate(6px, 6px);
+}
+
+.bar.open:nth-child(2) {
+  opacity: 0;
+}
+
+.bar.open:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* Navegação principal */
 .nav-links {
+  display: flex;
   gap: 3rem;
+  align-items: center;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
 }
 
-a {
+.nav-links a, .nav-links .login-link {
   text-decoration: none;
   color: black;
   font-weight: 400;
+  cursor: pointer;
 }
 
-a:hover {
+.nav-links a:hover,
+.nav-links .login-link:hover {
   color: #c4a962;
 }
 
@@ -36,8 +85,44 @@ a.active {
   font-weight: 500;
 }
 
-.colthree {
-  flex: 1;
-  display: flex;
-  justify-content: flex-end;
+/* Responsividade - telas pequenas */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: flex;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 80px;
+    left: 0;
+    right: 0;
+    background-color: white;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 1.5rem 2rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    z-index: 1050;
+    pointer-events: none; /* impede clique quando fechado */
+    opacity: 0; /* invisível */
+    transform: none;
+  }
+
+  .nav-links.open {
+    max-height: 400px;
+    pointer-events: auto; /* habilita clique */
+    opacity: 1;
+  }
+
+  .nav-links a, .nav-links .login-link {
+    font-size: 1.2rem;
+  }
+
+  .menu-toggle {
+    display: flex;
+    margin: 0;
+  }
+
 }

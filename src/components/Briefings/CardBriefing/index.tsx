@@ -4,13 +4,19 @@ import { BriefingData } from "../../../data/briefings";
 import { Link } from "react-router-dom";
 import { FaClock, FaStar } from "react-icons/fa";
 import { GoListOrdered } from "react-icons/go";
+import { motion } from "framer-motion";
 
-
-export const BriefingCard: React.FC<{ briefing: BriefingData }> = ({
+export const BriefingCard: React.FC<{ briefing: BriefingData; index?: number }> = ({
   briefing,
+  index = 0,
 }) => {
   return (
-    <div className="listar-briefing-card-container">
+    <motion.div
+      className="listar-briefing-card-container"
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1, ease: "easeOut", delay: index * 0.1 }}
+    >
       <div className={`list-briefing-card ${briefing.categoria.toLowerCase()}`}>
         <div className="list-briefing-header">
           <span className="categoria">{briefing.categoria}</span>
@@ -31,7 +37,7 @@ export const BriefingCard: React.FC<{ briefing: BriefingData }> = ({
             <FaStar /> {briefing.nivel}
           </span>
           <span className="info-perguntas">
-            <GoListOrdered  /> {briefing.perguntas} perguntas
+            <GoListOrdered /> {briefing.perguntas} perguntas
           </span>
         </div>
 
@@ -43,6 +49,6 @@ export const BriefingCard: React.FC<{ briefing: BriefingData }> = ({
           <button className="botao">Começar</button>
         </Link>
       </div>
-    </div>
+    </motion.div>
   );
 };

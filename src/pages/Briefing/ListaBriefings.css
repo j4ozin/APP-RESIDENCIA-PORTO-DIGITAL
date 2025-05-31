@@ -3,47 +3,95 @@
     display: flex;
     flex-direction: column;
     background-color: rgb(246, 247, 251);
-    padding-left: 5rem;
-    padding-right: 5rem;
+    padding: 2rem 5rem;
+    box-sizing: border-box;
 }
 
+/* TOPO */
 .topo-lista-briefings {
     flex: 1;
     margin-top: 6rem;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
 }
 
 .topo-lista-briefings-col1 {
+    display: flex;
     justify-content: flex-start;
-    display: flex;
-}
-
-.topo-lista-briefings-col2 {
-    display: flex;
-    justify-content: flex-end;
+    flex: 2;
 }
 
 .topo-lista-briefings h1 {
     font-size: 2rem;
     font-weight: 600;
     color: #000;
+    margin-bottom: 0.5rem;
+}
+
+.topo-lista-briefings p {
+    color: #555;
+    margin: 0;
+    font-size: 1rem;
+}
+
+/* BOTÃO */
+.topo-lista-briefings-col2 {
+    display: flex;
+    justify-content: flex-end;
+    flex: 1;
 }
 
 .briefing-personalizado {
-    height: 3rem;
+    height: 4rem;
     background: #0a8f52;
     color: #fff;
     border: none;
     border-radius: 20px;
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 1.5rem;
     font-size: 1rem;
     cursor: pointer;
-    top: 1rem;
-    right: 1rem;
+    transition: background 0.3s ease;
 }
 
 .briefing-personalizado:hover {
     background: #087f48;
+}
+
+/* RODAPÉ */
+.profile-footer {
+    margin-top: 3rem;
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+    .container-lista-briefings {
+        padding: 2rem;
+    }
+
+    .topo-lista-briefings {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-top: 4rem;
+    }
+
+    .topo-lista-briefings-col1,
+    .topo-lista-briefings-col2 {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .topo-lista-briefings h1,
+    .topo-lista-briefings p {
+        text-align: center;
+    }
+
+    .briefing-personalizado {
+        width: 100%;
+        max-width: 300px;
+        margin-top: 1rem;
+    }
 }

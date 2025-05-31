@@ -2,9 +2,13 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 18rem;
+  width: 25rem;
   margin: 0 auto;
   gap: 0.5rem;
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
 }
 
 .login-form label {
@@ -125,4 +129,39 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
+}
+
+.login-form button[type="submit"] {
+  width: 100%;
+  padding: 0.7rem;
+  background-color: #0a8f52;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 0.5rem;
+  transition: background 0.3s;
+}
+
+.login-form button[type="submit"]:hover {
+  background-color: #087f48;
+}
+
+
+@media (max-width: 480px) {
+  .login-form {
+    width: 90%;
+    padding: 1rem;
+  }
+
+  .social-login {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .social-button {
+    width: 100%;
+    justify-content: center;
+  }
 }

@@ -22,16 +22,20 @@ const Cadastro: React.FC = () => {
 
     const handleCepBlur = async () => {
         if (form.cep.length === 8) {
-            const response = await fetch(`https://viacep.com.br/ws/${form.cep}/json/`);
-            const data = await response.json();
-            if (!data.erro) {
-                setForm({
-                    ...form,
-                    endereco: data.logradouro || '',
-                    bairro: data.bairro || '',
-                    cidade: data.localidade || '',
-                    uf: data.uf || '',
-                });
+            try {
+                const response = await fetch(`https://viacep.com.br/ws/${form.cep}/json/`);
+                const data = await response.json();
+                if (!data.erro) {
+                    setForm((prev) => ({
+                        ...prev,
+                        endereco: data.logradouro || '',
+                        bairro: data.bairro || '',
+                        cidade: data.localidade || '',
+                        uf: data.uf || '',
+                    }));
+                }
+            } catch (error) {
+                console.error('Erro ao buscar CEP:', error);
             }
         }
     };
@@ -105,6 +109,7 @@ const Cadastro: React.FC = () => {
                         <input type="text" id="telefone" value={form.telefone} onChange={handleChange} />
                     </div>
                 </div>
+
                 <div className="radio-group">
                     <input type="radio" id="cliente" name="role" value="cliente" hidden />
                     <label htmlFor="cliente">Cliente</label>
