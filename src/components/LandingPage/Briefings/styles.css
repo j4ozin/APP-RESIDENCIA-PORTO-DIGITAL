@@ -1,63 +1,103 @@
 .briefings-cards {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
-    padding-left: 2rem;
-    padding-right: 2rem;
-}
-
-.briefings-card {
-    background: linear-gradient(180deg, #ffffff 0%, #dddddd 50%);
+    justify-content: center; /* Alinha os cards ao centro */
+    gap: 2rem;
+    padding: 2rem;
+  }
+  
+  .briefings-card {
+    background: linear-gradient(180deg, #ffffff 0%, #dddddd 100%);
     color: black;
-    padding: 1rem;
-    width: 30%;
+    padding: 2rem 1rem;
+    width: 300px; /* Largura estática */
     min-height: 500px;
-    text-align: left;
     transition: transform 0.3s;
-    position: relative;
     overflow: hidden;
-}
-
-.briefings-card .content {
-    padding-right: 1.5rem;
-    padding-left: 1.5rem;
-}
-
-.briefings-card .title {
-    padding-top: 5rem;
-    display: flex;
-    align-items: center;
-    font-size: 1rem;
-    letter-spacing: .2rem;
-}
-
-.briefings-card .icon {
-    margin-right: 1rem;
-    font-size: 30px;
-    stroke-width: 1;
-}
-
-.briefings-card h3 {
-    font-weight: lighter;
-}
-
-.briefings-card ul {
-    align-items: left;
+    border-radius: 12px;
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
-    font-size: 0.9rem;
+    justify-content: space-between;
+  }
+  
+  .briefings-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .briefings-card .content {
+    padding: 0 0.5rem;
+  }
+  
+  .title {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 1.1rem;
+    letter-spacing: 0.1rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .icon {
+    font-size: 2rem;
+  }
+  
+  h3 {
+    font-weight: 400;
+    margin: 0;
+  }
+  
+  ul {
     list-style-type: disc;
     padding-left: 1.5rem;
     margin: 1rem 0;
-    padding-top: 2rem;
-}
-
-.briefings-card:hover {
-    transform: translateY(-5px);
-}
-
-.right-text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    font-size: 0.95rem;
+  }
+  
+  ul li a {
+    color: inherit;
+    text-decoration: none;
+  }
+  
+  ul li a:hover {
+    text-decoration: underline;
+  }
+  
+  .right-text {
     text-align: right;
     font-style: italic;
-}
+    margin-top: auto;
+  }
+  
+  /* Responsividade */
+  @media (max-width: 1024px) {
+    .briefings-card {
+      width: 280px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .briefings-cards {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .briefings-card {
+      width: 90%;
+      min-height: auto;
+    }
+  
+    .title {
+      justify-content: center;
+      text-align: center;
+      flex-direction: column;
+    }
+  
+    .right-text {
+      text-align: center;
+      margin-top: 1.5rem;
+    }
+  }
+  

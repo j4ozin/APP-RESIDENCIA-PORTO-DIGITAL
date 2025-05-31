@@ -3,15 +3,34 @@ section#about {
   height: calc(100vh - 80px);
   margin-left: 11.25rem;
   padding: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  margin: 0;
+}
+
+section#about::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0,0,0,0.4); /* overlay escuro */
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1;
 }
 
 .text {
   flex: 1;
-  padding-right: 15rem;
+  /* padding-right: 15rem; */
   display: flex;
   flex-direction: column;
   justify-content: center;
   font-weight: 200;
+  position: relative;
+  z-index: 2;
+  color: black;
+  margin: 2rem;
 }
 
 p {
@@ -23,6 +42,8 @@ p {
   min-width: 50%;
   height: 100%;
   overflow: hidden;
+  position: relative;
+  z-index: 2;
 }
 
 .image img {
@@ -31,4 +52,28 @@ p {
   object-fit: cover;
   border-top-left-radius: 40px;
   display: block;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  section#about {
+    flex-direction: column;
+    height: auto;
+    padding: 4rem 2rem;
+    background-image: url('../assets/imagens/about.jpg'); /* substituir pelo caminho correto */
+    margin: 0;
+  }
+
+  section#about::before {
+    opacity: 1;
+  }
+
+  .text {
+    padding: 0;
+    color: white;
+  }
+
+  .image {
+    display: none; /* oculta a imagem na div */
+  }
 }

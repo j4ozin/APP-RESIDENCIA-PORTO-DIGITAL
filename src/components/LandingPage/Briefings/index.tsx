@@ -1,58 +1,73 @@
 import React from 'react';
 import './styles.css';
-import { TbBuildingStore } from "react-icons/tb";
-import { HiOutlineBuildingOffice2 } from "react-icons/hi2";
-import { HiOutlineHomeModern } from "react-icons/hi2";
+import { TbBuildingStore } from 'react-icons/tb';
+import { HiOutlineBuildingOffice2, HiOutlineHomeModern } from 'react-icons/hi2';
 import { Link } from 'react-router-dom';
 
 const Briefings: React.FC = () => {
+  const cards = [
+    {
+      icon: <HiOutlineHomeModern className="icon" />,
+      title: 'RESIDENCIAIS',
+      items: [
+        { label: 'Casa do Zero', link: '/briefing/casadozero' },
+        { label: 'Reforma Total' },
+        { label: 'Cozinha dos Sonhos' },
+        { label: 'Espaço Kids' },
+        { label: 'Home Office Compacto' },
+      ],
+    },
+    {
+      icon: <TbBuildingStore className="icon" />,
+      title: 'COMERCIAIS',
+      items: [
+        { label: 'Loja de Roupas' },
+        { label: 'Café Charmoso' },
+        { label: 'Restaurante Temático' },
+        { label: 'Barbearia Moderna' },
+        { label: 'Salão de Beleza' },
+      ],
+    },
+    {
+      icon: <HiOutlineBuildingOffice2 className="icon" />,
+      title: 'CORPORATIVOS',
+      items: [
+        { label: 'Escritório Colaborativo' },
+        { label: 'Sala de Reuniões Executiva' },
+        { label: 'Recepção de Impacto' },
+        { label: 'Espaço de Descompressão' },
+        { label: 'Escritório Sustentável' },
+      ],
+    },
+  ];
+
   return (
     <section id="briefings" className="section servicos">
       <div className="briefings-cards">
-        <div className="briefings-card">
-          <div className='content'>
-            <div className='title'>
-              <HiOutlineHomeModern className='icon' />
-              <h3>RESIDENCIAIS</h3></div>
-            <ul>
-            <li><Link to={'/briefing/casadozero'}>Casa do Zero</Link></li>
-            <li>Reforma Total</li>
-            <li>Cozinha dos Sonhos</li>
-            <li>Espaço Kids</li>
-            <li>Home Office Compacto</li>
-            </ul>
-            <div className="right-text"><Link to="/briefing">Ver mais</Link></div>
-          </div>
-        </div>
-        <div className="briefings-card">
-        <div className='content'>
-          <div className='title'>
-            <TbBuildingStore className='icon' />
-            <h3>COMERCIAIS</h3></div>
-            <ul>
-            <li>Loja de Roupas</li>
-            <li>Café Charmoso</li>
-            <li>Restaurante Temático</li>
-            <li>Barbearia Moderna</li>
-            <li>Salão de Beleza</li>
+        {cards.map((card, index) => (
+          <div className="briefings-card" key={index}>
+            <div className="content">
+              <div className="title">
+                {card.icon}
+                <h3>{card.title}</h3>
+              </div>
+              <ul>
+                {card.items.map((item, idx) =>
+                  item.link ? (
+                    <li key={idx}>
+                      <Link to={item.link}>{item.label}</Link>
+                    </li>
+                  ) : (
+                    <li key={idx}>{item.label}</li>
+                  )
+                )}
               </ul>
-              <div className="right-text"><Link to="/briefing">Ver mais</Link></div>
-          </div></div>
-        <div className="briefings-card">
-        <div className='content'>
-          <div className='title'>
-            <HiOutlineBuildingOffice2 className='icon' />
-            <h3>CORPORATIVOS</h3>
+              <div className="right-text">
+                <Link to="/briefing">Ver mais</Link>
+              </div>
+            </div>
           </div>
-            <ul>
-            <li>Escritório Colaborativo</li>
-            <li>Sala de Reuniões Executiva</li>
-            <li>Recepção de Impacto</li>
-            <li>Espaço de Descompressão</li>
-            <li>Escritório Sustentável</li>
-              </ul>
-              <div className="right-text"><Link to="/briefing">Ver mais</Link></div>
-          </div></div>
+        ))}
       </div>
     </section>
   );

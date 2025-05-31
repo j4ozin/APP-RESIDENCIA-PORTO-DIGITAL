@@ -4,6 +4,7 @@ import './styles.css';
 import { FaGoogle } from "react-icons/fa6";
 import { FaFacebook } from 'react-icons/fa';
 import { PiEye, PiEyeClosed } from "react-icons/pi";
+import { motion } from "framer-motion";
 
 const LoginForm: React.FC = () => {
   const [email, setEmail] = useState('');
@@ -39,7 +40,13 @@ const LoginForm: React.FC = () => {
   }, [redirectTo]);
 
   return (
-    <form className="login-form" onSubmit={handleSubmit}>
+    <motion.form 
+      className="login-form" 
+      onSubmit={handleSubmit}
+      initial={{ opacity: 0, y: -20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, ease: "easeOut" }}>
+        
       <label htmlFor="email" className="title">E-mail</label>
       <div className="input-wrapper"> 
         <input
@@ -89,7 +96,7 @@ const LoginForm: React.FC = () => {
           Redirecionar
         </Link>
       )}
-    </form>
+    </motion.form>
   );
 };
 

@@ -78,59 +78,49 @@ export const FilterBriefing: React.FC<FilterBriefingProps> = ({
   const isAllSelected = selectedCategory.length === allCategories.length;
 
   return (
-    <div className="filtros-lista-briefings">
-      <div className="filtros-lista-briefings-col1">
-        <button
-          className={`todos ${isAllSelected ? "active" : ""}`}
-          onClick={handleAllCategories}
-        >
-          📋 Todos
-        </button>
-        <button
-          className={`residenciais ${
-            selectedCategory.includes("Residencial") ? "active" : ""
-          }`}
-          onClick={() => handleCategoryToggle("Residencial")}
-        >
-          🏡 Residenciais
-        </button>
-        <button
-          className={`comerciais ${
-            selectedCategory.includes("Comercial") ? "active" : ""
-          }`}
-          onClick={() => handleCategoryToggle("Comercial")}
-        >
-          🏬 Comerciais
-        </button>
-        <button
-          className={`corporativos ${
-            selectedCategory.includes("Corporativo") ? "active" : ""
-          }`}
-          onClick={() => handleCategoryToggle("Corporativo")}
-        >
-          🏢 Corporativos
-        </button>
-      </div>
-      <div className="filtros-lista-briefings-col2">
-        <div className="filtros-lista-briefings-busca">
-          <input
-            placeholder="Buscar por palavra-chave..."
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-          />
-        </div>
-        <div>
-          <select
-            value={sortOption}
-            onChange={(e) =>
-              setSortOption(e.target.value as "Mais usados" | "Novos")
-            }
-          >
-            <option>Mais usados</option>
-            <option>Novos</option>
-          </select>
-        </div>
-      </div>
+  
+<div className="filtros-lista-briefings" role="region" aria-label="Filtros de briefings">
+  <div className="filtros-lista-briefings-col1" role="group" aria-label="Categorias">
+    <button
+      className={`todos ${isAllSelected ? "active" : ""}`}
+      aria-pressed={isAllSelected}
+      onClick={handleAllCategories}
+    >
+      📋 Todos
+    </button>
+    {allCategories.map((category) => (
+      <button
+        key={category}
+        className={`${category.toLowerCase()} ${selectedCategory.includes(category) ? "active" : ""}`}
+        aria-pressed={selectedCategory.includes(category)}
+        onClick={() => handleCategoryToggle(category)}
+      >
+        {category === "Residencial" && "🏡 "}
+        {category === "Comercial" && "🏬 "}
+        {category === "Corporativo" && "🏢 "}
+        {category + ""}
+      </button>
+    ))}
+  </div>
+  <div className="filtros-lista-briefings-col2">
+    <div className="filtros-lista-briefings-busca">
+      <input
+        type="search"
+        placeholder="Buscar por palavra-chave..."
+        value={searchTerm}
+        onChange={(e) => setSearchTerm(e.target.value)}
+      />
     </div>
-  );
+    <div className="filtros-lista-briefings-ordenar">
+      <select
+        value={sortOption}
+        onChange={(e) => setSortOption(e.target.value as "Mais usados" | "Novos")}
+      >
+        <option value="Mais usados">Mais usados</option>
+        <option value="Novos">Novos</option>
+      </select>
+    </div>
+  </div>
+</div>
+  )
 };
