@@ -9,21 +9,77 @@ import ViewProfissional from './pages/PerfilPage/ViewProfissional';
 import ViewCliente from './pages/PerfilPage/ViewCliente';
 import Briefings from './pages/Briefing/ListaBriefings';
 import ProjectsPage from './pages/ProjectsPage';
+import Layout from './Layout'; // novo import
 
 export function Router() {
-    return (
-        <Routes>
-            <Route path="/" element={<LandingPage />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/cadastro" element={<CadastroPage />} />
-            <Route path="/briefing/casadozero" element={<BriefingCasadoZero />} />
-            <Route path="/perfil/cliente/editar" element={<EditCliente />} />
-            <Route path="/perfil/cliente/ver" element={<ViewCliente />} />
-            <Route path="/perfil/profissional/editar" element={<EditProfissional />} />
-            <Route path="/perfil/profissional/ver" element={<ViewProfissional />} />
-            <Route path="/perfil/cliente/ver" element={<ViewCliente />} />
-            <Route path="/briefing" element={<Briefings />} />
-            <Route path="/projetos" element={<ProjectsPage />} />
-        </Routes>
-    )
+  return (
+    <Routes>
+      <Route
+        path="/"
+        element={
+          <Layout>
+            <LandingPage />
+          </Layout>
+        }
+      />
+      <Route path="/login" element={<Login />} />
+      <Route path="/cadastro" element={<CadastroPage />} />
+      <Route
+        path="/briefing/casadozero"
+        element={
+          <Layout>
+            <BriefingCasadoZero />
+          </Layout>
+        }
+      />
+      <Route
+        path="/perfil/cliente/editar"
+        element={
+          <Layout>
+            <EditCliente />
+          </Layout>
+        }
+      />
+      <Route
+        path="/perfil/cliente/ver"
+        element={
+          <Layout>
+            <ViewCliente />
+          </Layout>
+        }
+      />
+      <Route
+        path="/perfil/profissional/editar"
+        element={
+          <Layout>
+            <EditProfissional />
+          </Layout>
+        }
+      />
+      <Route
+        path="/perfil/profissional/ver"
+        element={
+          <Layout>
+            <ViewProfissional />
+          </Layout>
+        }
+      />
+      <Route
+        path="/briefing"
+        element={
+          <Layout>
+            <Briefings />
+          </Layout>
+        }
+      />
+      <Route
+        path="/projetos"
+        element={
+          <Layout>
+            <ProjectsPage />
+          </Layout>
+        }
+      />
+    </Routes>
+  );
 }

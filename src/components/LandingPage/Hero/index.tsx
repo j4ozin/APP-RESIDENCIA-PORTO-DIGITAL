@@ -50,46 +50,47 @@ const cardData = [
 
 const Hero: React.FC = () => {
   
-const settings = {
-  dots: true,
-  infinite: true,
-  speed: 500,
-  slidesToShow: 4,
-  slidesToScroll: 1,
-  autoplay: true,
-  autoplaySpeed: 3000, // a cada 3 segundos
-  responsive: [
-    {
-      breakpoint: 1024,
-      settings: {
-        slidesToShow: 2
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 30000000, // 3 segundos
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2
+        }
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1
+        }
       }
-    },
-    {
-      breakpoint: 768,
-      settings: {
-        slidesToShow: 1
-      }
-    }
-  ]
-};
-
+    ]
+  };
 
   return (
     <section id="hero">
       <div className="hero-container">
+        {/* Imagem de fundo em posição absoluta, fica atrás do texto */}
         <img src={imagens.banner} alt="Banner" className="hero-background" />
-        <div className="hero-overlay">
+        <div className="hero-overlay" role="banner" aria-label="Mensagem principal do Briffa">
           <h1>Briefings sem ruído. Projetos com mais precisão.</h1>
           <p>O Briffa conecta clientes e arquitetos por meio de briefings inteligentes e estruturados, garantindo clareza desde o início do projeto.</p>
         </div>
       </div>
 
-      <div className="carousel-wrapper">
+      <div className="carousel-wrapper" aria-label="Carrossel de informações sobre briefings">
         <Slider {...settings}>
           {cardData.map((card, index) => (
             <div className="hero-card" key={index}>
-              <img src={card.img} alt={card.title} className="hero-background" />
+              {/* Imagem em fluxo natural para evitar sobreposição */}
+              <img src={card.img} alt={card.title} />
               <div className="content">
                 <h3>{card.title}</h3>
                 <p>{card.desc}</p>
