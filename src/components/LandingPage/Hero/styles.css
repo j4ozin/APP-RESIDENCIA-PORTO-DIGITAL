@@ -17,6 +17,9 @@
   height: 100%; /* cobre toda altura do container */
   object-fit: cover; /* mantém proporção e corta se necessário */
   z-index: 0; /* atrás do texto */
+  height: auto;
+  max-height: 90vh;
+  object-fit: cover;
 }
 
 .hero-overlay {
@@ -63,6 +66,15 @@
 
 /* Carrossel */
 
+  color: white;
+  font-weight: 500;
+  font-size: clamp(1.5rem, 5vw, 3rem);
+}
+
+.hero-overlay p {
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
+  color: white;
+}
 .carousel-wrapper {
   padding: 2rem;
 }
@@ -107,6 +119,7 @@
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
+  line-clamp: inherit;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
 }
@@ -118,6 +131,7 @@
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
+  line-clamp: inherit;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
 }

@@ -24,6 +24,7 @@ main {
 
 html {
   scroll-behavior: smooth;
+  overflow-y: auto;
 }
 
 .section {

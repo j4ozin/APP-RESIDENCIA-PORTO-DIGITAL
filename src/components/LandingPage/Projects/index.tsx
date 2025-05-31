@@ -24,12 +24,12 @@ const projetos = [
 const Projects: React.FC = () => {
   return (
     <section id="projects" className="lp-section projetos">
-       <div className="projetos-container">
+       <div className="lp-projetos-container">
         {projetos.map((projeto) => (
-         <div key={projeto.id} className="projeto-card">
+         <div key={projeto.id} className="lp-projeto-card">
           
-            <div> {projeto.imagem} </div>
-             <div className='content'>
+            <div className='lp-imagens'> {projeto.imagem} </div>
+             <div className='lp-content'>
                 <h3>{projeto.titulo}</h3>
                 <p>{projeto.descricao}</p>
          

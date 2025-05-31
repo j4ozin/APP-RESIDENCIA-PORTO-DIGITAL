@@ -5,25 +5,55 @@ html, body, #root {
   padding: 0;
 }
 
+.briefing-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  height: 100%;
+  overflow: hidden;
+}
+
 .centro {
   display: flex;
   flex-direction: column;
-  flex: 1;
+  flex: 1 1 auto;
   overflow: hidden;
+  min-height: 0;
 }
 
 .progresso {
   flex-shrink: 0;
   position: relative;
+  overflow: hidden;
 }
 
 .perguntas {
-    z-index: 3;
-  flex: 1;
+  min-width: 80%;
+  align-items: center;
+  justify-content: center;
   overflow-y: auto;
+  overflow-x: hidden;
   position: relative;
-  max-width: 1200px;
+  max-width: 80%;
   margin: 0 auto;
   padding: 1rem 0;
   box-sizing: border-box;
+}
+
+
+.perguntas::-webkit-scrollbar {
+  width: 8px;
+}
+
+.perguntas::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.perguntas::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+.perguntas::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }

@@ -1,4 +1,4 @@
-.projetos-container {
+.lp-projetos-container {
   display: flex;
   flex-wrap: wrap; /* permite quebrar linha */
   justify-content: center; /* centraliza os cards */
@@ -8,6 +8,13 @@
 
 .projeto-card {
   flex: 1 1 25rem; /* flex-grow, flex-shrink, base width */
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.lp-projeto-card {
   max-width: 25rem;
   display: flex;
   flex-direction: column;
@@ -24,12 +31,17 @@
 }
 
 .projeto-card .content {
+.lp-projeto-card .lp-content {
+  text-align: right;
+  background-color: white;
+  text-align: left;
+  border: 1px;
   padding: 1rem;
   text-align: left;
   margin-top: 2rem;
 }
 
-.projeto-card h3 {
+.lp-projeto-card h3 {
   margin-bottom: 1rem;
   font-size: 1.25rem;
 }
@@ -37,6 +49,7 @@
 .projeto-card p {
   font-size: 0.95rem;
   line-height: 1.4;
+.lp-projeto-card p {
   padding-top: 0.5rem;
 }
 
@@ -52,3 +65,8 @@
     max-width: 100%;
   }
 }
+
+.lp-content {
+  padding: 1rem;
+}
+

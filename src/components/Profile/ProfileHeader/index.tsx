@@ -40,7 +40,7 @@ const ProfileHeader: React.FC<ProfileHeaderProps> = ({ profilePic, tipoUsuario }
       </div>
       <div className="profile-center-col">
         <Link to="/briefing">Briefings</Link>
-        <Link to="">Projetos</Link>
+        <Link to="/projetos" state={{ tipoUsuario }}>Projetos</Link>
         <Link to="">Ajuda</Link>
       </div>
       <div className="profile-right-col" ref={dropdownRef}>

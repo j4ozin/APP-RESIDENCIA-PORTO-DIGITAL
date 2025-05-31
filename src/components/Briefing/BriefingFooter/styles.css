@@ -1,6 +1,8 @@
 .briefing-footer {
-  z-index: 4;
-  position: absolute;
+  background-color: white;
+  flex-shrink: 0;
+  z-index: 1;
+  position: relative;
   left: 0;
   bottom: 0;
   width: 100%;
