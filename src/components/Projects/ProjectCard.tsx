@@ -1,6 +1,6 @@
 import React from "react";
 import "./ProjectCard.css";
-import { FaArchive, FaEye, FaPencilAlt, FaUser, FaFolder, FaExternalLinkAlt } from "react-icons/fa";
+import { FaArchive, FaEye, FaPencilAlt, FaUser, FaExternalLinkAlt } from "react-icons/fa";
 import { FaLocationPin } from "react-icons/fa6";
 import { TbProgress } from "react-icons/tb";
 import { RiProgress8Fill } from "react-icons/ri";
