@@ -2,7 +2,7 @@
   position: relative;
   width: 100%;
   /* Defina altura mínima para garantir que texto e imagem fiquem visíveis */
-  min-height: 350px;
+  min-height: 250px;
   /* Para que a altura siga o conteúdo do texto, não fixe a altura */
   padding-top: 3rem; /* para dar espaço entre topo e texto */
   padding-bottom: 3rem; /* espaço inferior */
@@ -17,7 +17,6 @@
   height: 100%; /* cobre toda altura do container */
   object-fit: cover; /* mantém proporção e corta se necessário */
   z-index: 0; /* atrás do texto */
-  height: auto;
   max-height: 90vh;
   object-fit: cover;
 }
@@ -64,12 +63,7 @@
   }
 }
 
-/* Carrossel */
 
-  color: white;
-  font-weight: 500;
-  font-size: clamp(1.5rem, 5vw, 3rem);
-}
 
 .hero-overlay p {
   font-size: clamp(1rem, 2.5vw, 1.2rem);

@@ -39,9 +39,8 @@ const ProfileHeader: React.FC<ProfileHeaderProps> = ({ profilePic, tipoUsuario }
         <Logo />
       </div>
       <div className="profile-center-col">
-        <Link to="/briefing">Briefings</Link>
+        <Link to="/briefing" state={{ tipoUsuario }}>Briefings</Link>
         <Link to="/projetos" state={{ tipoUsuario }}>Projetos</Link>
-        <Link to="">Ajuda</Link>
       </div>
       <div className="profile-right-col" ref={dropdownRef}>
         <div className="profile-pic-thumb" onClick={() => setOpen(!open)}>

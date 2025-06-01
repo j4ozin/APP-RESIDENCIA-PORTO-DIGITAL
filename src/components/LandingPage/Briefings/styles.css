@@ -1,103 +1,135 @@
 .briefings-cards {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center; /* Alinha os cards ao centro */
-    gap: 2rem;
-    padding: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Changed to center for better flexibility */
+  gap: 2rem; /* Reduced gap for smaller screens */
+  padding: 2rem 1rem; /* Adjusted padding for smaller screens */
+  max-width: 1200px; /* Max width for large screens */
+  margin: 0 auto; /* Center the container */
+}
+
+.briefings-card {
+  background: linear-gradient(180deg, #ffffff 0%, #dddddd 100%);
+  color: black;
+  flex: 1 1 30%; /* Flexible growth with minimum 30% width */
+  min-width: 250px; /* Minimum width for smaller screens */
+  max-width: 400px; /* Maximum width to prevent overly wide cards */
+  min-height: 28rem; /* Reduced min-height for flexibility */
+  transition: transform 0.3s ease;
+  overflow: hidden;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.briefings-card:hover {
+  transform: translateY(-5px);
+}
+
+.briefings-card .content {
+  padding: 1rem; /* Increased padding for better spacing */
+  display: flex;
+  flex-direction: column;
+  flex: 1; /* Ensure content takes available space */
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: clamp(1rem, 2.5vw, 1.2rem); /* Responsive font size */
+  letter-spacing: 0.05rem;
+  margin-bottom: 1.5rem;
+}
+
+.icon {
+  font-size: clamp(1.5rem, 4vw, 2rem); /* Responsive icon size */
+}
+
+h3 {
+  font-weight: 400;
+  margin: 0;
+}
+
+ul {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+  margin: 1rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-size: clamp(0.9rem, 2vw, 0.95rem); /* Responsive font size */
+}
+
+ul li a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul li a:hover {
+  text-decoration: underline;
+}
+
+.right-text {
+  text-align: right;
+  font-style: italic;
+  margin-top: auto;
+  padding: 0 1rem 1rem; /* Added padding for consistency */
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .briefings-cards {
+    gap: 1.5rem; /* Smaller gap for tablets */
   }
-  
+
   .briefings-card {
-    background: linear-gradient(180deg, #ffffff 0%, #dddddd 100%);
-    color: black;
-    padding: 2rem 1rem;
-    width: 300px; /* Largura estática */
-    min-height: 500px;
-    transition: transform 0.3s;
-    overflow: hidden;
-    border-radius: 12px;
-    display: flex;
+    flex: 1 1 45%; /* Allow two cards per row on tablets */
+    min-width: 220px; /* Slightly smaller min-width */
+    max-width: 350px;
+  }
+}
+
+@media (max-width: 768px) {
+  .briefings-cards {
     flex-direction: column;
-    justify-content: space-between;
-  }
-  
-  .briefings-card:hover {
-    transform: translateY(-5px);
-  }
-  
-  .briefings-card .content {
-    padding: 0 0.5rem;
-  }
-  
-  .title {
-    display: flex;
     align-items: center;
-    gap: 0.75rem;
-    font-size: 1.1rem;
-    letter-spacing: 0.1rem;
-    margin-bottom: 1.5rem;
+    gap: 1rem; /* Smaller gap for mobile */
+    padding: 1rem;
   }
-  
-  .icon {
-    font-size: 2rem;
+
+  .briefings-card {
+    flex: 1 1 100%; /* Full width on mobile */
+    width: 90%; /* Keep some margin */
+    min-width: 0; /* Allow card to shrink if needed */
+    min-height: auto; /* Allow height to adjust to content */
   }
-  
-  h3 {
-    font-weight: 400;
-    margin: 0;
-  }
-  
-  ul {
-    list-style-type: disc;
-    padding-left: 1.5rem;
-    margin: 1rem 0;
-    display: flex;
-    flex-direction: column;
+
+  .title {
+    justify-content: center;
+    text-align: center;
+    flex-direction: row; /* Keep row layout for better mobile appearance */
     gap: 0.5rem;
-    font-size: 0.95rem;
   }
-  
-  ul li a {
-    color: inherit;
-    text-decoration: none;
-  }
-  
-  ul li a:hover {
-    text-decoration: underline;
-  }
-  
+
   .right-text {
-    text-align: right;
-    font-style: italic;
-    margin-top: auto;
+    text-align: center;
+    margin-top: 1rem;
+    padding: 0 0 1rem;
   }
-  
-  /* Responsividade */
-  @media (max-width: 1024px) {
-    .briefings-card {
-      width: 280px;
-    }
+}
+
+@media (max-width: 480px) {
+  .briefings-card {
+    width: 95%; /* Slightly tighter for very small screens */
   }
-  
-  @media (max-width: 768px) {
-    .briefings-cards {
-      flex-direction: column;
-      align-items: center;
-    }
-  
-    .briefings-card {
-      width: 90%;
-      min-height: auto;
-    }
-  
-    .title {
-      justify-content: center;
-      text-align: center;
-      flex-direction: column;
-    }
-  
-    .right-text {
-      text-align: center;
-      margin-top: 1.5rem;
-    }
+
+  .title {
+    font-size: clamp(0.9rem, 3vw, 1rem);
   }
-  
+
+  ul {
+    font-size: clamp(0.8rem, 2.5vw, 0.9rem);
+  }
+}

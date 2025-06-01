@@ -1,25 +1,38 @@
-.navbar {
-  font-family: 'Poppins', sans-serif;
+.header-container {
   position: fixed;
-  top: 0; left: 0; right: 0;
+  top: 0;
+  left: 0;
+  right: 0;
   background-color: white;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
   display: flex;
   align-items: center;
-  justify-content: space-between; /* para alinhar logo e nav nos cantos */
-  padding: 1rem 2rem;
+  justify-content: space-between;
   z-index: 1000;
   height: 80px;
 }
 
-
-
-.colone {
+.header-left-col {
   display: flex;
   align-items: center;
+  justify-content: flex-start;
 }
 
-/* Menu hamburguer botão */
+.header-right-col {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.nav-links {
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+  justify-content: center;
+  flex: 1; /* Takes available space to center links */
+}
+
+/* Menu hamburger button */
 .menu-toggle {
   display: none;
   flex-direction: column;
@@ -30,7 +43,7 @@
   border: none;
   cursor: pointer;
   padding: 0;
-  z-index: 1100; /* sobrepor o nav */
+  z-index: 1100;
 }
 
 .menu-toggle:focus {
@@ -45,7 +58,6 @@
   transition: all 0.3s ease;
 }
 
-/* Animação do ícone para quando aberto */
 .bar.open:nth-child(1) {
   transform: rotate(45deg) translate(6px, 6px);
 }
@@ -58,17 +70,9 @@
   transform: rotate(-45deg) translate(6px, -6px);
 }
 
-/* Navegação principal */
-.nav-links {
-  display: flex;
-  gap: 3rem;
-  align-items: center;
-  align-items: center;
-  justify-content: center;
-  flex: 1;
-}
-
-.nav-links a, .nav-links .login-link {
+/* Navigation links */
+.nav-links a,
+.header-right-col .login-link {
   text-decoration: none;
   color: black;
   font-weight: 400;
@@ -76,16 +80,21 @@
 }
 
 .nav-links a:hover,
-.nav-links .login-link:hover {
+.header-right-col .login-link:hover {
   color: #c4a962;
 }
 
-a.active {
+.nav-links a.active {
   color: #c4a962;
   font-weight: 500;
 }
 
-/* Responsividade - telas pequenas */
+/* Hide mobile-only login link in desktop view */
+.mobile-only.hidden {
+  display: none;
+}
+
+/* Responsive - small screens */
 @media (max-width: 768px) {
   .menu-toggle {
     display: flex;
@@ -100,29 +109,31 @@ a.active {
     flex-direction: column;
     gap: 1.5rem;
     padding: 1.5rem 2rem;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.3s ease;
+    transition: max-height 0.3s ease, opacity 0.3s ease;
     z-index: 1050;
-    pointer-events: none; /* impede clique quando fechado */
-    opacity: 0; /* invisível */
-    transform: none;
+    pointer-events: none;
+    opacity: 0;
   }
 
   .nav-links.open {
     max-height: 400px;
-    pointer-events: auto; /* habilita clique */
+    pointer-events: auto;
     opacity: 1;
   }
 
-  .nav-links a, .nav-links .login-link {
+  .nav-links a,
+  .nav-links .login-link {
     font-size: 1.2rem;
   }
 
-  .menu-toggle {
-    display: flex;
-    margin: 0;
+  .header-right-col {
+    display: none; /* Hide login on small screens outside hamburger */
   }
 
+  .mobile-only {
+    display: block; /* Show login link in hamburger menu */
+  }
 }

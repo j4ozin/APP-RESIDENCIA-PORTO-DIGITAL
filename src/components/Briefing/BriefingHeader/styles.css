@@ -16,7 +16,6 @@
 .briefing-header-left-col {
   justify-content: flex-start;
   font-size: 1.6rem;
-  display: flex;
   align-items: center;
   flex-direction: row;
 }
@@ -24,7 +23,6 @@
 .briefing-header-right-col {
   align-items: center;
   justify-content: center;
-  display: flex;
   font-size: 0.8rem;
 }
 
@@ -62,5 +60,92 @@
 }
 
 .blank {
-  flex:1;
+  flex: 1;
+}
+
+/* Mobile-specific styles (below 768px) */
+@media (max-width: 768px) {
+  .briefing-header-container {
+    flex-direction: row; /* Keep row layout */
+    padding: 0.5rem;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .briefing-header-left-col {
+    flex: 0 0 auto; /* Fixed size for logo */
+    font-size: 1.4rem; /* Slightly smaller */
+    min-width: 100px; /* Ensure logo space */
+  }
+
+  .briefing-header-center-col {
+    flex: 1; /* Take available space */
+    justify-content: center;
+  }
+
+  .briefing-header-right-col {
+    flex: 0 0 auto; /* Minimal space */
+    font-size: 0.75rem;
+  }
+
+  .rounded-frame {
+    flex-direction: column; /* Stack text vertically */
+    font-size: 0.85rem; /* Base font size */
+    max-width: 200px; /* Constrain width */
+    align-items: center; /* Center content */
+  }
+
+  .selected-briefing {
+    font-size: 0.65rem; /* Smaller font for "Briefing selecionado" */
+    padding: 0.3rem 0.5rem; /* Reduced padding */
+    width: 100%; /* Full width for alignment */
+    justify-content: center; /* Center text */
+    white-space: nowrap; /* Prevent wrapping */
+  }
+
+  .briefing-type {
+    font-size: 0.85rem; /* Same as desktop for "CASA DO ZERO" */
+    padding: 0.3rem 0.5rem; /* Reduced padding */
+    width: 100%; /* Full width for alignment */
+    justify-content: center; /* Center text and icon */
+    gap: 0.3rem; /* Smaller gap */
+    white-space: nowrap; /* Prevent wrapping */
+  }
+
+  .briefing-type svg {
+    width: 16px; /* Smaller icon */
+    height: 16px;
+  }
+
+  .blank {
+    flex: 0.5; /* Reduce blank space */
+  }
+}
+
+/* Extra small screens (below 480px) */
+@media (max-width: 480px) {
+  .briefing-header-left-col {
+    font-size: 1.2rem; /* Smaller font */
+    min-width: 80px; /* Smaller logo space */
+  }
+
+  .rounded-frame {
+    max-width: 160px; /* Tighter width */
+  }
+
+  .selected-briefing {
+    font-size: 0.6rem; /* Even smaller for "Briefing selecionado" */
+    padding: 0.25rem 0.4rem; /* Minimal padding */
+  }
+
+  .briefing-type {
+    font-size: 0.85rem; /* Keep desktop size */
+    padding: 0.25rem 0.4rem; /* Minimal padding */
+    gap: 0.2rem; /* Minimal gap */
+  }
+
+  .briefing-type svg {
+    width: 14px; /* Even smaller icon */
+    height: 14px;
+  }
 }

@@ -2,11 +2,11 @@
   display: flex;
   gap: 1rem;
   flex-direction: row;
-  align-items: center;
+  align-items: left;
   color: black;
   margin-bottom: 1rem;
   flex-wrap: wrap; /* Ajuda em telas menores */
-  justify-content: center; /* Centraliza quando quebra linha */
+  justify-content: left; /* Centraliza quando quebra linha */
   text-align: center;
 }
 
