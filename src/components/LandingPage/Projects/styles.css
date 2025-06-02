@@ -2,13 +2,16 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 2rem;
+  gap: 2.5rem;
   padding: 2rem 1rem;
+  max-width: 75rem;
+  margin: 0 auto;
 }
 
 .lp-project-card {
   min-width: 15rem;
-  max-width: 25rem;
+  max-width: 22.5rem;
+  min-height: 28rem;
   display: flex;
   flex-direction: column;
   background-color: white;
