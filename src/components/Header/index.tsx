@@ -20,12 +20,6 @@ const Header: React.FC<HeaderProps> = ({ activeSection }) => {
         <Logo />
       </div>
 
-      <button className="menu-toggle" aria-label="Abrir menu" onClick={toggleMenu}>
-        <span className={`bar ${menuOpen ? 'open' : ''}`}></span>
-        <span className={`bar ${menuOpen ? 'open' : ''}`}></span>
-        <span className={`bar ${menuOpen ? 'open' : ''}`}></span>
-      </button>
-
       <nav className={`nav-links ${menuOpen ? 'open' : ''}`}>
         <a href="#hero" className={activeSection === 'hero' ? 'active' : ''} onClick={handleLinkClick}>
           Home
@@ -52,6 +46,12 @@ const Header: React.FC<HeaderProps> = ({ activeSection }) => {
       </nav>
 
       <div className="header-right-col">
+        <button className="menu-toggle" aria-label="Abrir menu" onClick={toggleMenu}>
+          <span className={`bar ${menuOpen ? 'open' : ''}`}></span>
+          <span className={`bar ${menuOpen ? 'open' : ''}`}></span>
+          <span className={`bar ${menuOpen ? 'open' : ''}`}></span>
+        </button>
+
         <Link to="/login" className="login-link" onClick={handleLinkClick}>
           Login
         </Link>

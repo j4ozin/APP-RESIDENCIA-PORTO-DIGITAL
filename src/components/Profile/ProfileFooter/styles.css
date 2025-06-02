@@ -56,3 +56,20 @@ footer.profile-footer {
   color: #4c51bf;
   text-decoration: underline;
 }
+
+/* MEDIA QUERY PARA TELAS MENORES */
+@media (max-width: 768px) {
+  .profile-footer-content {
+    flex-direction: column;
+    height: auto;
+    gap: 10px;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .profile-footer-copyright,
+  .profile-footer-links {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}

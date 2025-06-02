@@ -11,6 +11,9 @@ interface ImageLikingQuestionProps {
 export default function ImageLikingQuestion({ questionText, imageUrl, options, answer, onChange }: ImageLikingQuestionProps) {
   return (
     <div className="image-like">
+      <div className="image-like-image">
+        <img src={imageUrl} alt="Exemplo visual" />
+      </div>
       <div className="image-like-horizontal">
       <div className="image-like-question">
         <h3>{questionText}</h3>
@@ -26,9 +29,6 @@ export default function ImageLikingQuestion({ questionText, imageUrl, options, a
           </button>
         ))}
       </div>
-      </div>
-      <div className="image-like-image">
-        <img src={imageUrl} alt="Exemplo visual" />
       </div>
       
     </div>

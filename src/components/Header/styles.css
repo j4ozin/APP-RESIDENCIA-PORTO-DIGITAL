@@ -12,16 +12,19 @@
   height: 80px;
 }
 
-.header-left-col {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-}
-
+.header-left-col,
 .header-right-col {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+}
+
+.header-left-col {
+  flex: 0 0 auto;
+}
+
+.header-right-col {
+  flex: 0 0 auto;
+  gap: 1rem;
 }
 
 .nav-links {
@@ -29,7 +32,7 @@
   gap: 3rem;
   align-items: center;
   justify-content: center;
-  flex: 1; /* Takes available space to center links */
+  flex: 1;
 }
 
 /* Menu hamburger button */
@@ -70,7 +73,6 @@
   transform: rotate(-45deg) translate(6px, -6px);
 }
 
-/* Navigation links */
 .nav-links a,
 .header-right-col .login-link {
   text-decoration: none;
@@ -89,12 +91,10 @@
   font-weight: 500;
 }
 
-/* Hide mobile-only login link in desktop view */
 .mobile-only.hidden {
   display: none;
 }
 
-/* Responsive - small screens */
 @media (max-width: 768px) {
   .menu-toggle {
     display: flex;
@@ -129,11 +129,11 @@
     font-size: 1.2rem;
   }
 
-  .header-right-col {
-    display: none; /* Hide login on small screens outside hamburger */
+  .header-right-col .login-link {
+    display: none;
   }
 
   .mobile-only {
-    display: block; /* Show login link in hamburger menu */
+    display: block;
   }
 }

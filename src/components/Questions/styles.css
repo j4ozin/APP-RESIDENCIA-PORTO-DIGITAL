@@ -320,3 +320,40 @@ input.invalid {
     grid-column: span 1;
   }
 }
+
+
+
+@media (max-width: 1050px) {
+  .image-like {
+    flex-direction: column;
+    width: 100%;
+    gap: 2rem;
+    padding: 1rem;
+  }
+
+  .image-like-horizontal {
+    width: 100%;
+  }
+
+  .image-like-image {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .image-like-image img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .image-like-options {
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+  }
+
+  .image-like-options button {
+    width: 100%;
+    max-width: 300px;
+    text-align: center;
+  }
+}
