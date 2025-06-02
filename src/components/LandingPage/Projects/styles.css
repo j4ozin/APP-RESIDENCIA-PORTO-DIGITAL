@@ -1,8 +1,7 @@
 .lp-projects-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  gap: 1rem;
+  justify-content: space-between;
   padding: 2rem 1rem;
   max-width: 75rem;
   margin: 0 auto;
