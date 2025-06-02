@@ -1,28 +1,20 @@
 .profile-view-details {
-  display: flex;
-  flex-direction: row;
-  gap: 2rem;
-  align-items: flex-start;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* reduzido de 300px para melhor adaptação no mobile */
+  gap: 20px;
+  border-radius: 10px;
   width: 100%;
-  flex-wrap: wrap; /* para que em telas pequenas os blocos quebrem linha */
-  box-sizing: border-box;
-  padding: 1rem;
 }
 
 .profile-section {
-  flex: 1 1 30%; /* ocupa cerca de 30% do espaço, cresce e encolhe conforme espaço disponível */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   background: #fff;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   box-sizing: border-box;
-  min-width: 250px; /* evita ficar muito pequeno */
-    width: 33.33%;
-    height: auto;
-    background: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  min-width: 250px;
 }
 
 .profile-section h3 {
@@ -34,9 +26,9 @@
   list-style: none;
   padding: 0;
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: row; /* Itens em linha */
+  flex-wrap: wrap; /* Quebra linha se não couber */
   gap: 10px;
-  align-items: center;
   margin-top: 0.75rem;
 }
 
@@ -45,7 +37,7 @@
   padding: 5px 10px;
   border-radius: 5px;
   color: #c4a962;
-  white-space: normal;
+  white-space: nowrap; /* Impede quebra de texto dentro do <li> */
   line-height: 1.5;
   box-sizing: border-box;
   transition: background-color 0.3s ease;
@@ -93,22 +85,9 @@
     width: 100%;
     min-width: unset;
   }
-}
 
-@media (max-width: 1024px) {
-  .profile-view-details {
-    flex-direction: column;
-    gap: 1.5rem;
-  }
-
-  .profile-section {
-    width: 100%;
-  }
-}
-
-@media (max-width: 768px) {
   .profile-section ul {
-    justify-content: center;
+    justify-content: flex-start; /* Alinha à esquerda em telas menores */
   }
 }
 
@@ -116,6 +95,5 @@
   .profile-section ul li {
     font-size: 0.85rem;
     padding: 6px 12px;
-    text-align: center;
   }
 }
