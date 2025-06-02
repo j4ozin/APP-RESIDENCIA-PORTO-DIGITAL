@@ -2,14 +2,15 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 2.5rem;
+  gap: 1rem;
   padding: 2rem 1rem;
   max-width: 75rem;
   margin: 0 auto;
 }
 
 .lp-project-card {
-  min-width: 15rem;
+  flex: 1 1 30%;
+  min-width: 10rem;
   max-width: 22.5rem;
   min-height: 28rem;
   display: flex;
