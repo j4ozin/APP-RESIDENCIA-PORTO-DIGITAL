@@ -1,20 +1,19 @@
 .briefings-cards {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center; /* Changed to center for better flexibility */
-  gap: 2rem; /* Reduced gap for smaller screens */
-  padding: 2rem 1rem; /* Adjusted padding for smaller screens */
-  max-width: 1200px; /* Max width for large screens */
-  margin: 0 auto; /* Center the container */
+  justify-content: space-between;
+  padding: 2rem 1rem;
+  max-width: 75rem;
+  margin: 0 auto;
 }
 
 .briefings-card {
   background: linear-gradient(180deg, #ffffff 0%, #dddddd 100%);
   color: black;
-  flex: 1 1 30%; /* Flexible growth with minimum 30% width */
-  min-width: 250px; /* Minimum width for smaller screens */
-  max-width: 400px; /* Maximum width to prevent overly wide cards */
-  min-height: 28rem; /* Reduced min-height for flexibility */
+  flex: 1 1 30%;
+  min-width: 10rem;
+  max-width: 22.5rem;
+  min-height: 28rem;
   transition: transform 0.3s ease;
   overflow: hidden;
   border-radius: 12px;
@@ -28,23 +27,23 @@
 }
 
 .briefings-card .content {
-  padding: 1rem; /* Increased padding for better spacing */
+  padding: 1rem;
   display: flex;
   flex-direction: column;
-  flex: 1; /* Ensure content takes available space */
+  flex: 1;
 }
 
 .title {
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  font-size: clamp(1rem, 2.5vw, 1.2rem); /* Responsive font size */
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
   letter-spacing: 0.05rem;
   margin-bottom: 1.5rem;
 }
 
 .icon {
-  font-size: clamp(1.5rem, 4vw, 2rem); /* Responsive icon size */
+  font-size: clamp(1.5rem, 4vw, 2rem);
 }
 
 h3 {
@@ -59,7 +58,7 @@ ul {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  font-size: clamp(0.9rem, 2vw, 0.95rem); /* Responsive font size */
+  font-size: clamp(0.9rem, 2vw, 0.95rem);
 }
 
 ul li a {
@@ -75,18 +74,17 @@ ul li a:hover {
   text-align: right;
   font-style: italic;
   margin-top: auto;
-  padding: 0 1rem 1rem; /* Added padding for consistency */
+  padding: 0 1rem 1rem;
 }
 
-/* Responsive adjustments */
 @media (max-width: 1024px) {
   .briefings-cards {
-    gap: 1.5rem; /* Smaller gap for tablets */
+    gap: 1.5rem;
   }
 
   .briefings-card {
-    flex: 1 1 45%; /* Allow two cards per row on tablets */
-    min-width: 220px; /* Slightly smaller min-width */
+    flex: 1 1 45%;
+    min-width: 220px;
     max-width: 350px;
   }
 }
@@ -95,21 +93,21 @@ ul li a:hover {
   .briefings-cards {
     flex-direction: column;
     align-items: center;
-    gap: 1rem; /* Smaller gap for mobile */
+    gap: 1rem;
     padding: 1rem;
   }
 
   .briefings-card {
-    flex: 1 1 100%; /* Full width on mobile */
-    width: 90%; /* Keep some margin */
-    min-width: 0; /* Allow card to shrink if needed */
-    min-height: auto; /* Allow height to adjust to content */
+    flex: 1 1 100%;
+    width: 90%;
+    min-width: 0;
+    min-height: auto;
   }
 
   .title {
     justify-content: center;
     text-align: center;
-    flex-direction: row; /* Keep row layout for better mobile appearance */
+    flex-direction: row;
     gap: 0.5rem;
   }
 
@@ -122,7 +120,7 @@ ul li a:hover {
 
 @media (max-width: 480px) {
   .briefings-card {
-    width: 95%; /* Slightly tighter for very small screens */
+    width: 95%;
   }
 
   .title {

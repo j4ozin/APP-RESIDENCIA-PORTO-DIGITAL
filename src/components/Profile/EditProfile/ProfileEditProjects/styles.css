@@ -90,6 +90,16 @@
     color: #854d0e;
 }
 
+.status-concluído {
+    background: #d1fae5;
+    color: #065f46;
+}
+
+.status-arquivado {
+    background: #e5e7eb;
+    color: #4b5563;
+}
+
 .status-approved {
     background: #d1fae5;
     color: #065f46;
@@ -169,6 +179,15 @@
     background-color: #e0e0e0;
 }
 
+.profile-button.history {
+    background-color: #e5e7eb;
+    color: #4b5563;
+    border: none;
+}
+
+.profile-button.history:hover {
+    background-color: #d1d5db;
+}
 
 .profile-button.cancel {
     background-color: #fee2e1;
@@ -178,4 +197,14 @@
 
 .profile-button.cancel:hover {
     background-color: #f8b8b2;
+}
+
+.profile-button.archive {
+    background-color: #e5e7eb;
+    color: #4b5563;
+    border: none;
+}
+
+.profile-button.archive:hover {
+    background-color: #d1d5db;
 }

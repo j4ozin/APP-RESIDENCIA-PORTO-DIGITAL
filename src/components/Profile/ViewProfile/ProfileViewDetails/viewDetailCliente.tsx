@@ -1,16 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import './styles.css';
-import { IoIosPeople } from 'react-icons/io';
-import { IoIosColorPalette } from 'react-icons/io';
-import { IoIosCheckmarkCircleOutline } from 'react-icons/io';
+import { IoIosColorPalette, IoIosCheckmarkCircleOutline, IoIosPeople } from 'react-icons/io';
+import { projectsCliente } from '../../../../data/projectsCliente';
+
 
 const BIN_ID = '6828d1788a456b79669fc94c';
 const MASTER_KEY = '$2a$10$xA1tJ3v.41uR2JXO2eEnzOvCF6FQhFeqGCW/Fd535UessmSwL0whK';
 
 const ClienteViewDetails: React.FC = () => {
   const [estilos, setEstilos] = useState<string[]>([]);
-  const [projetos, setProjetos] = useState<string[]>([]);
-  const [hobbies, setHobbies] = useState<string[]>([]);
+  const [interesses, setInteresses] = useState<string[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -23,13 +22,16 @@ const ClienteViewDetails: React.FC = () => {
           },
         });
 
+        if (!res.ok) {
+          throw new Error(`Erro HTTP: ${res.status}`);
+        }
+
         const data = await res.json();
         const cliente = data?.record?.usuarios?.[0];
 
         if (cliente) {
           setEstilos(cliente.estilos || []);
-          setProjetos(cliente.projetosFinalizados || []);
-          setHobbies(cliente.hobbies || []);
+          setInteresses(cliente.interesses || []);
         } else {
           console.warn('Nenhum cliente encontrado.');
         }
@@ -43,7 +45,12 @@ const ClienteViewDetails: React.FC = () => {
     carregarDados();
   }, []);
 
-  if (loading) return <p>Carregando dados do cliente...</p>;
+  // Filtra projetos com status "Concluído" do projectsCliente
+  const projetosConcluidos = projectsCliente
+    .filter((projeto) => projeto.status === 'Concluído')
+    .map((projeto) => projeto.titulo);
+
+  if (loading) return <p>Carregando dados...</p>;
 
   return (
     <div className="profile-view-details">
@@ -61,30 +68,30 @@ const ClienteViewDetails: React.FC = () => {
         </ul>
       </div>
 
-      <div className="profile-section projects">
+      <div className="profile-section specialties">
         <div className="icon-section">
           <IoIosCheckmarkCircleOutline className="icon" />
           <h3>Projetos Finalizados</h3>
         </div>
         <ul>
-          {projetos.length > 0 ? (
-            projetos.map((item, index) => <li key={index}>{item}</li>)
+          {projetosConcluidos.length > 0 ? (
+            projetosConcluidos.map((item, index) => <li key={index}>{item}</li>)
           ) : (
-            <li>3 Concluídos</li>
+            <li>Nenhum projeto cadastrado.</li>
           )}
         </ul>
       </div>
 
-      <div className="profile-section hobbies">
+      <div className="profile-section specialties">
         <div className="icon-section">
           <IoIosPeople className="icon" />
           <h3>Interesses Pessoais</h3>
         </div>
         <ul>
-          {hobbies.length > 0 ? (
-            hobbies.map((item, index) => <li key={index}>{item}</li>)
+          {interesses.length > 0 ? (
+            interesses.map((item, index) => <li key={index}>{item}</li>)
           ) : (
-            <li>Nenhum interesse pessoal definido</li>
+            <li>Nenhum interesse cadastrado.</li>
           )}
         </ul>
       </div>

@@ -80,7 +80,6 @@ const ProfileViewProfile: React.FC = () => {
           </span>
         </p>
         <p className="view-profile-description">{user.descricao}</p>
-
         <div className="view-profile-contact">
           <a href={`mailto:${user.email}`} className="view-profile-contact-link email">
             <MdOutlineEmail />

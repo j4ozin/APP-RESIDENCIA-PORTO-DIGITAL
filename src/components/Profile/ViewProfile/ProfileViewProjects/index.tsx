@@ -1,7 +1,7 @@
 import React from 'react';
 import './styles.css';
 import { FaRegFolderOpen } from "react-icons/fa6";
-import { projectsProfissional } from '../../../../data/projectsProfissional'; 
+import { projectsProfissional } from '../../../../data/projectsProfissional';
 
 const ProfileViewProjects: React.FC = () => {
     const projetosConcluidos = projectsProfissional
