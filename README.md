@@ -24,7 +24,7 @@
 
 ## 🛠️ Tecnologias
 
-- **Frontend**: HTML, CSS, JavaScript, React.js
+- **Frontend**: HTML, CSS, TypeScript, React.js
 - **Prototipagem**: [Figma](https://www.figma.com/design/SEGzbZrd7LI5K7eaCC5Etu/Bambum-Ul-%7C-UX?node-id=0-1&t=wcmylf5kKhokMfDy-1)
 - **Gerenciamento**: [Trello](https://trello.com/invite/b/67f738267719c0858e2fe5a6/ATTiff4da859ff6f0f67e73fedf53fc21cd033F5865A/bambu)
 
@@ -64,7 +64,8 @@ Dúvidas? Fale com a **Squad 10**:
 - Renato Delgado ([GitHub](https://github.com/renatodelgado))  
 - João Basante ([GitHub](https://github.com/j4ozin))
 - Klaiven Castro ([GitHub](https://github.com/klaiven))
-- Diogo, Gabriela, Leonardo, Luis, Rayza, Vinicius
+- Vinicius Nascimento ([GitHub](https://github.com/vicent777))
+- Diogo, Gabriela, Leonardo, Luis, Rayza
 
 ---
 
